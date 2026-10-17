@@ -30,13 +30,8 @@
     <link rel="icon" type="image/png" href="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://kit.fontawesome.com/ec060982d4.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-grid.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-logo.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/root.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/extras.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/safety-net.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/corporate-aero.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css" />
+    <link rel="stylesheet" href="/assets/corporate-aero.css?v=20261017c" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261017c" />
   </head>
   <body>
     <a href="#content" class="skip-link">Skip to main content</a>
@@ -60,7 +55,7 @@
     </nav>
 
     <header class="corp-navbar" role="banner">
-      <div class="container corp-header-inner">
+      <div class="corp-header-inner">
         <a href="/" class="corp-brand-link">
           <img
             src="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png"
@@ -172,65 +167,13 @@
 }
 </script>
 
-<style>
-    /* Aero Inner-Glass for Alerts */
-    .aero-alert-danger {
-        background: rgba(220, 53, 69, 0.1);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        border: 1px solid rgba(220, 53, 69, 0.3);
-        border-radius: 12px;
-        box-shadow: inset 0 2px 4px rgba(220, 53, 69, 0.05);
-    }
-    
-    [data-bs-theme="dark"] .aero-alert-danger {
-        background: rgba(220, 53, 69, 0.15);
-        border: 1px solid rgba(220, 53, 69, 0.4);
-    }
 
-    .keyword-highlight {
-        color: var(--bs-danger);
-        font-weight: bold;
-        text-shadow: 0 0 8px rgba(220, 53, 69, 0.2);
-    }
-    
-    .safe-list li {
-        margin-bottom: 0.75rem;
-    }
 
-    /* Glossy Danger Buttons */
-    .btn-aero-danger {
-        background: linear-gradient(180deg, #ff4d5e 0%, #dc3545 48%, #b02a37 52%, #992430 100%);
-        border: 1px solid #842029;
-        color: #ffffff !important;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
-    .btn-aero-danger:hover {
-        background: linear-gradient(180deg, #ff6b7a 0%, #e84c5c 48%, #c43343 52%, #b02a37 100%);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 4px 8px rgba(0, 0, 0, 0.3);
-        transform: translateY(-1px);
-    }
-
-    /* Outline Danger (Glassy) */
-    .btn-aero-outline-danger {
-        background: rgba(220, 53, 69, 0.05);
-        border: 1px solid var(--bs-danger);
-        color: var(--bs-danger);
-        backdrop-filter: blur(4px);
-    }
-    .btn-aero-outline-danger:hover {
-        background: var(--bs-danger);
-        color: #ffffff;
-        box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
-    }
-</style>
-
-<div class="container-fluid pb-5 pt-3">
+<div class="container py-5">
     
     <div class="row mb-4">
         <div class="col-12">
-            <div class="card wa-ported-card card bg-hud-red border-0 p-4 p-md-5 shadow-sm w-100" style="--body-padding: 0; --header-padding: 0; --wa-panel-bg: transparent;">
+            <div class="card wa-ported-card bg-hud-red border-0 p-4 p-md-5 shadow-sm w-100" style="--body-padding: 0; --header-padding: 0; --wa-panel-bg: transparent;">
                 
                 <div class="d-flex align-items-center mb-4 border-bottom border-danger border-opacity-25 pb-3">
                     <i class="fa-duotone fa-shield-exclamation fa-3x text-danger me-3" aria-hidden="true" style="filter: drop-shadow(0 2px 4px rgba(220,53,69,0.4));"></i>
@@ -271,10 +214,10 @@
 
                 <div class="d-flex flex-wrap gap-3 mt-2 border-top border-secondary-subtle pt-4">
                     <a href="https://www.ic3.gov/" class="btn btn-danger d-inline-flex align-items-center justify-content-center gap-2 btn-aero-danger px-4 fw-bold" target="_blank" rel="noopener noreferrer">
-                        <i slot="start" class="fa-solid fa-building-columns" aria-hidden="true"></i>Report to FBI (IC3) <i slot="end" class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;" aria-hidden="true"></i>
+                        <i class="fa-solid fa-building-columns" aria-hidden="true"></i>Report to FBI (IC3) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;" aria-hidden="true"></i>
                     </a>
                     <a href="https://reportfraud.ftc.gov/" class="btn btn-danger d-inline-flex align-items-center justify-content-center gap-2 btn-aero-outline-danger px-4 fw-bold" target="_blank" rel="noopener noreferrer">
-                        <i slot="start" class="fa-solid fa-scale-balanced" aria-hidden="true"></i>Report to FTC <i slot="end" class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;" aria-hidden="true"></i>
+                        <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>Report to FTC <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;" aria-hidden="true"></i>
                     </a>
                 </div>
 
@@ -284,7 +227,7 @@
 
     <div class="row mt-2">
         <div class="col-12">
-            <div class="card wa-ported-card card bg-hud-base border-0 p-4 text-center shadow-sm w-100" style="--body-padding: 0; --header-padding: 0; --wa-panel-bg: transparent;">
+            <div class="card wa-ported-card bg-hud-base border-0 p-4 text-center shadow-sm w-100" style="--body-padding: 0; --header-padding: 0; --wa-panel-bg: transparent;">
                 <h3 class="h6 text-uppercase fw-bold text-secondary mb-3">Automated System Query Responses</h3>
                 <p class="small text-body-secondary font-monospace mb-0">
                     Q: Is RaggieSoft hiring? A: No. RaggieSoft is a single-person entity.<br>
@@ -359,7 +302,7 @@
       </div>
     </footer>
 
-    <script src="https://assets.raggiesoft.com/raggiesoft-corporate/js/corporate-client.js" defer></script>
-    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js" defer></script>
+    <script src="/assets/corporate-client.js?v=20261017c" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261017c" defer></script>
   </body>
 </html>

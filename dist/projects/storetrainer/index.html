@@ -30,13 +30,8 @@
     <link rel="icon" type="image/png" href="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://kit.fontawesome.com/ec060982d4.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-grid.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-logo.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/root.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/extras.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/safety-net.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/corporate-aero.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css" />
+    <link rel="stylesheet" href="/assets/corporate-aero.css?v=20261017c" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261017c" />
   </head>
   <body>
     <a href="#content" class="skip-link">Skip to main content</a>
@@ -60,7 +55,7 @@
     </nav>
 
     <header class="corp-navbar" role="banner">
-      <div class="container corp-header-inner">
+      <div class="corp-header-inner">
         <a href="/" class="corp-brand-link">
           <img
             src="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png"
@@ -150,62 +145,14 @@
 
     <main id="content" class="flex-grow-1" tabindex="-1">
       
-<style>
-    /* --- LEGACY HERO SECTION --- */
-    .legacy-hero {
-        position: relative;
-        overflow: hidden;
-        border-bottom: 1px solid var(--raggie-glass-border);
-        box-shadow: 0 8px 32px rgba(255, 179, 0, 0.08);
-        color: var(--bs-body-color);
-        z-index: 1;
-    }
 
-    .legacy-hero::before {
-        content: '';
-        position: absolute;
-        top: -5%; left: -5%; right: -5%; bottom: -5%; 
-        /* Dynamically resolves the CDN path to ensure the background image loads across environments */
-        background-image: url('https://assets.raggiesoft.com/raggiesoft-media/images/hero/dark-aero.jpg'); /* Defaults to dark aero for legacy feel */
-        background-size: cover;
-        background-position: center;
-        z-index: -2;
-        animation: aero-pan 40s linear infinite alternate;
-        filter: sepia(100%) hue-rotate(5deg) saturate(150%) brightness(0.6); /* Amber tinting */
-    }
-
-    .legacy-hero::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: linear-gradient(120deg, rgba(7, 11, 20, 0.95) 0%, rgba(255, 179, 0, 0.05) 100%);
-        z-index: -1;
-    }
-
-    /* --- COMPONENT STYLING --- */
-    .legacy-card {
-        background: rgba(255, 179, 0, 0.05);
-        border: 1px solid rgba(255, 179, 0, 0.2);
-        box-shadow: inset 0 0 20px rgba(255, 179, 0, 0.02);
-        border-radius: 12px;
-    }
-    
-    .code-block {
-        background: #0d1117;
-        border: 1px solid #30363d;
-        border-radius: 8px;
-        color: #e6edf3;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 0.85rem;
-    }
-</style>
 
 
 <div class="legacy-hero py-5 mb-5 text-light">
     <div class="container py-4">
         <div class="row align-items-center">
             <div class="col-md-8">
-                <span class="badge bg-warning text-dark font-monospace text-uppercase shadow-sm py-2 px-3 text-warning fw-bold mb-3" style="background: rgba(255, 179, 0, 0.1);">
+                <span class="badge bg-warning text-dark font-monospace text-uppercase shadow-sm py-2 px-3 fw-bold mb-3">
                     <i class="fa-solid fa-box-archive me-1" aria-hidden="true"></i> Verified Legacy Software
                 </span>
                 <h1 class="display-4 fw-bold text-uppercase mb-2 brand-font" style="text-shadow: 0 0 15px rgba(255,179,0,0.5);">
@@ -284,7 +231,7 @@ End If</code></pre>
                         <tr>
                             <td class="fw-bold font-monospace small">$INSTDIR\Source</td>
                             <td class="small">All Systems</td>
-                            <td class="small">Extracts the pristine `.vbp` project file, forms, and modules directly to the user's drive for full educational auditing and recompilation.</td>
+                            <td class="small">Extracts the pristine <code>.vbp</code> project file, forms, and modules directly to the user's drive for full educational auditing and recompilation.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -294,7 +241,7 @@ End If</code></pre>
 
         <div class="col-lg-4">
             
-            <div class="card wa-ported-card card bg-body-tertiary border-secondary-subtle shadow-sm mb-4 w-100" style="--body-padding: 0; --header-padding: 0; --wa-panel-bg: transparent;">
+            <div class="card wa-ported-card bg-body-tertiary border-secondary-subtle shadow-sm mb-4 w-100" style="--body-padding: 0; --header-padding: 0; --wa-panel-bg: transparent;">
                 <div class="card-body p-4">
                     <h3 class="h6 fw-bold text-uppercase mb-3 text-secondary">Tech Specs</h3>
                     
@@ -321,7 +268,7 @@ End If</code></pre>
 
             <div class="d-grid gap-3">
                 <a href="https://storetrainer.raggiesoft.com/" class="btn btn-warning d-inline-flex align-items-center justify-content-center gap-2 py-3 fw-bold text-uppercase shadow-sm text-dark" target="_blank" rel="noopener noreferrer">
-                    <i slot="start" class="fa-solid fa-download" aria-hidden="true"></i> Download Archive
+                    <i class="fa-solid fa-download" aria-hidden="true"></i> Download Archive
                 </a>
             </div>
 
@@ -392,7 +339,7 @@ End If</code></pre>
       </div>
     </footer>
 
-    <script src="https://assets.raggiesoft.com/raggiesoft-corporate/js/corporate-client.js" defer></script>
-    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js" defer></script>
+    <script src="/assets/corporate-client.js?v=20261017c" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261017c" defer></script>
   </body>
 </html>

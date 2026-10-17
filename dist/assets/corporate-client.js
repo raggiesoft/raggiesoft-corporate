@@ -35,9 +35,9 @@
       stored = localStorage.getItem('color-scheme');
     } catch (e) {}
     if (stored === 'light' || stored === 'dark') {
-      toggleLabel.textContent = current === 'dark' ? '🌙 Dark Aero (Pinned)' : '☀️ Frutiger Aero (Pinned)';
+      toggleLabel.textContent = current === 'dark' ? '🌙 Dark' : '☀️ Light';
     } else {
-      toggleLabel.textContent = current === 'dark' ? '🌙 System (Dark Aero)' : '☀️ System (Frutiger Aero)';
+      toggleLabel.textContent = current === 'dark' ? '🌙 Dark (Auto)' : '☀️ Light (Auto)';
     }
   }
 
@@ -77,5 +77,19 @@
       var isOpen = primaryNav.classList.toggle('is-open');
       menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+  }
+
+  /* Hydrate scraper-protected B2B email links (.elara-secure-mail) */
+  var mailLinks = document.querySelectorAll('.elara-secure-mail');
+  for (var i = 0; i < mailLinks.length; i++) {
+    var link = mailLinks[i];
+    var u = link.getAttribute('data-u');
+    var d = link.getAttribute('data-d');
+    var t = link.getAttribute('data-t');
+    if (u && d && t) {
+      var addr = u + '@' + d + '.' + t;
+      link.setAttribute('href', 'mailto:' + addr);
+      link.setAttribute('title', 'Email ' + addr);
+    }
   }
 })();

@@ -30,13 +30,8 @@
     <link rel="icon" type="image/png" href="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://kit.fontawesome.com/ec060982d4.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-grid.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-logo.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/root.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/extras.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/safety-net.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/corporate-aero.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css" />
+    <link rel="stylesheet" href="/assets/corporate-aero.css?v=20261017c" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261017c" />
   </head>
   <body>
     <a href="#content" class="skip-link">Skip to main content</a>
@@ -60,7 +55,7 @@
     </nav>
 
     <header class="corp-navbar" role="banner">
-      <div class="container corp-header-inner">
+      <div class="corp-header-inner">
         <a href="/" class="corp-brand-link">
           <img
             src="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png"
@@ -150,57 +145,7 @@
 
     <main id="content" class="flex-grow-1" tabindex="-1">
       
-<style>
-    /* WCAG: Focus Outline for Keyboard Navigators */
-    a:focus-visible, button:focus-visible {
-        outline: 3px solid var(--bs-primary) !important;
-        outline-offset: 4px;
-        border-radius: 50rem; /* Matches pill shapes */
-    }
-
-    /* Custom Glass Buttons for Secondary Actions */
-    .btn-glass-info {
-        background: rgba(0, 195, 255, 0.1);
-        border: 1px solid rgba(0, 195, 255, 0.4);
-        color: var(--bs-info) !important;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-    .btn-glass-info:hover, .btn-glass-info:focus {
-        background: rgba(0, 195, 255, 0.2);
-        box-shadow: 0 0 12px rgba(0, 195, 255, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
-        transform: translateY(-1px);
-    }
-
-    .btn-glass-warning {
-        background: rgba(255, 179, 0, 0.1);
-        border: 1px solid rgba(255, 179, 0, 0.4);
-        color: var(--bs-warning) !important;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-    .btn-glass-warning:hover, .btn-glass-warning:focus {
-        background: rgba(255, 179, 0, 0.2);
-        box-shadow: 0 0 12px rgba(255, 179, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
-        transform: translateY(-1px);
-    }
-
-    /* Aero Modal Window */
-    .aero-modal-content {
-        background-color: var(--raggie-glass-bg) !important;
-        backdrop-filter: blur(24px) saturate(150%);
-        -webkit-backdrop-filter: blur(24px) saturate(150%);
-        border: 1px solid var(--raggie-glass-border) !important;
-        border-radius: 12px;
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--raggie-gloss-highlight);
-        color: var(--bs-body-color) !important;
-    }
-
-    [data-bs-theme="dark"] .aero-modal-content {
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 var(--raggie-gloss-highlight), 0 0 20px rgba(0, 229, 255, 0.15);
-    }
-</style>
-
+<div class="container py-5">
 <div class="border-bottom border-secondary-subtle pb-4 mb-5 pt-3 text-center text-md-start">
     <h1 class="display-5 fw-bold brand-font text-uppercase mb-3 text-glow-primary" style="letter-spacing: 2px;">Licensing & Copyright</h1>
     <p class="lead text-body-secondary tech-font" style="max-width: 800px;">
@@ -212,7 +157,7 @@
     
     <div class="col-md-6">
         <div class="card wa-ported-card bg-hud-blue h-100 w-100 shadow-sm transition-base hover-lift" style="--border-color: var(--raggie-glass-border);">
-            <div slot="header" class="p-4 border-bottom" style="border-color: var(--raggie-glass-border) !important;">
+            <div class="p-4 border-bottom" style="border-color: var(--raggie-glass-border) !important;">
                 <div class="d-flex align-items-center">
                     <i class="fa-brands fa-osi fa-2x me-3 text-primary" aria-hidden="true" style="filter: drop-shadow(0 2px 4px rgba(0,130,230,0.4));"></i>
                     <div>
@@ -247,7 +192,7 @@
 
     <div class="col-md-6">
         <div class="card wa-ported-card bg-hud-warning h-100 w-100 shadow-sm transition-base hover-lift" style="--border-color: var(--raggie-glass-border);">
-            <div slot="header" class="p-4 border-bottom" style="border-color: var(--raggie-glass-border) !important;">
+            <div class="p-4 border-bottom" style="border-color: var(--raggie-glass-border) !important;">
                 <div class="d-flex align-items-center">
                     <i class="fa-brands fa-creative-commons fa-2x me-3 text-warning" aria-hidden="true" style="filter: drop-shadow(0 2px 4px rgba(255,179,0,0.4));"></i>
                     <div>
@@ -267,7 +212,7 @@
                     <li class="mb-2"><i class="fa-solid fa-circle-exclamation text-warning me-2" aria-hidden="true"></i><strong>ShareAlike:</strong> Derivative works must use the same license.</li>
                 </ul>
                 <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="btn btn-warning d-inline-flex align-items-center justify-content-center gap-2 mt-auto fw-bold" target="_blank" rel="noopener noreferrer">
-                    <i slot="start" class="fa-solid fa-external-link" aria-hidden="true"></i>View CC BY-SA 4.0 Deed
+                    <i class="fa-solid fa-external-link" aria-hidden="true"></i>View CC BY-SA 4.0 Deed
                 </a>
             </div>
         </div>
@@ -313,7 +258,7 @@
         </div>
         <div class="text-center text-md-end">
             <a href="https://stardust.raggiesoft.com/story/cosmic-tidal-lock-sound" class="btn btn-primary d-inline-flex align-items-center justify-content-center gap-2 fw-bold text-uppercase">
-                <i slot="start" class="fa-duotone fa-book-atlas" aria-hidden="true"></i>Read Full Cosmic Tidal Lock Sound&trade; Explainer &amp; Suno Guide
+                <i class="fa-duotone fa-book-atlas" aria-hidden="true"></i>Read Full Cosmic Tidal Lock Sound&trade; Explainer &amp; Suno Guide
             </a>
         </div>
     </div>
@@ -330,7 +275,7 @@
                 <span class="font-monospace small text-body-secondary">CC BY-SA 4.0 &bull; Standard DSP Consumer License &bull; Direct Commercial Non-Exclusive Sync</span>
             </div>
             <span class="badge bg-success font-monospace">
-                <i slot="start" class="fa-solid fa-shield-check" aria-hidden="true"></i>ZERO CONTENT-ID AMBUSH GUARANTEE
+                <i class="fa-solid fa-shield-check" aria-hidden="true"></i>ZERO CONTENT-ID AMBUSH GUARANTEE
             </span>
         </div>
 
@@ -389,7 +334,7 @@
                 </div>
                 <div class="flex-shrink-0">
                     <a href="/licensing/commercial" class="btn btn-primary d-inline-flex align-items-center justify-content-center gap-2 fw-bold text-uppercase shadow">
-                        <i slot="start" class="fa-duotone fa-briefcase" aria-hidden="true"></i>Request Commercial License
+                        <i class="fa-duotone fa-briefcase" aria-hidden="true"></i>Request Commercial License
                     </a>
                 </div>
             </div>
@@ -407,11 +352,13 @@
         </div>
         <div class="flex-shrink-0 mt-3 mt-md-0">
             <a href="/licensing/commercial" class="btn btn-primary d-inline-flex align-items-center justify-content-center gap-2 fw-bold text-uppercase shadow">
-                <i slot="start" class="fa-duotone fa-briefcase" aria-hidden="true"></i>Commercial Portal
+                <i class="fa-duotone fa-briefcase" aria-hidden="true"></i>Commercial Portal
             </a>
         </div>
     </div>
 </div>
+</div>
+
     </main>
 
     <footer class="corp-footer py-5 mt-5" role="contentinfo">
@@ -475,7 +422,7 @@
       </div>
     </footer>
 
-    <script src="https://assets.raggiesoft.com/raggiesoft-corporate/js/corporate-client.js" defer></script>
-    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js" defer></script>
+    <script src="/assets/corporate-client.js?v=20261017c" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261017c" defer></script>
   </body>
 </html>

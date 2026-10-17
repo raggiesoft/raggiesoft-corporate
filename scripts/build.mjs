@@ -106,9 +106,9 @@ function buildCorporateClientJs() {
       stored = localStorage.getItem('color-scheme');
     } catch (e) {}
     if (stored === 'light' || stored === 'dark') {
-      toggleLabel.textContent = current === 'dark' ? '🌙 Dark Aero (Pinned)' : '☀️ Frutiger Aero (Pinned)';
+      toggleLabel.textContent = current === 'dark' ? '🌙 Dark' : '☀️ Light';
     } else {
-      toggleLabel.textContent = current === 'dark' ? '🌙 System (Dark Aero)' : '☀️ System (Frutiger Aero)';
+      toggleLabel.textContent = current === 'dark' ? '🌙 Dark (Auto)' : '☀️ Light (Auto)';
     }
   }
 
@@ -148,6 +148,20 @@ function buildCorporateClientJs() {
       var isOpen = primaryNav.classList.toggle('is-open');
       menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+  }
+
+  /* Hydrate scraper-protected B2B email links (.elara-secure-mail) */
+  var mailLinks = document.querySelectorAll('.elara-secure-mail');
+  for (var i = 0; i < mailLinks.length; i++) {
+    var link = mailLinks[i];
+    var u = link.getAttribute('data-u');
+    var d = link.getAttribute('data-d');
+    var t = link.getAttribute('data-t');
+    if (u && d && t) {
+      var addr = u + '@' + d + '.' + t;
+      link.setAttribute('href', 'mailto:' + addr);
+      link.setAttribute('title', 'Email ' + addr);
+    }
   }
 })();
 `;
@@ -221,13 +235,8 @@ function renderCorporateShell(page) {
     <link rel="icon" type="image/png" href="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://kit.fontawesome.com/ec060982d4.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-grid.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-logo.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/root.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/extras.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/safety-net.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/corporate-aero.css" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css" />
+    <link rel="stylesheet" href="/assets/corporate-aero.css?v=20261017c" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261017c" />
   </head>
   <body>
     <a href="#content" class="skip-link">Skip to main content</a>
@@ -251,7 +260,7 @@ function renderCorporateShell(page) {
     </nav>
 
     <header class="corp-navbar" role="banner">
-      <div class="container corp-header-inner">
+      <div class="corp-header-inner">
         <a href="/" class="corp-brand-link">
           <img
             src="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png"
@@ -369,8 +378,8 @@ function renderCorporateShell(page) {
       </div>
     </footer>
 
-    <script src="https://assets.raggiesoft.com/raggiesoft-corporate/js/corporate-client.js" defer></script>
-    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js" defer></script>
+    <script src="/assets/corporate-client.js?v=20261017c" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261017c" defer></script>
   </body>
 </html>`;
 }
