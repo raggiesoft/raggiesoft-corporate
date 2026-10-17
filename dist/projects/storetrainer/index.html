@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        var storedScheme = localStorage.getItem('color-scheme');
+        document.querySelector('meta[name="color-scheme"]').content = storedScheme ?? 'light dark';
+        var resolvedBsTheme = (storedScheme === 'light' || storedScheme === 'dark')
+          ? storedScheme
+          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-bs-theme', resolvedBsTheme);
+      } catch (e) {}
+    </script>
+    <title>RaggieSoft StoreTrainer | Win32 Retro PC Game &amp; Trainer Mana</title>
+    <meta name="description" content="100% hand-written Visual Basic 6.0 &amp; .NET desktop utility to store and launch PC games and trainers across Windows 95 through Windows 11." />
+    <link rel="canonical" href="https://corporate.raggiesoft.com/projects/storetrainer" />
+    <meta property="og:title" content="RaggieSoft StoreTrainer | Win32 Retro PC Game &amp; Trainer Mana" />
+    <meta property="og:description" content="100% hand-written Visual Basic 6.0 &amp; .NET desktop utility to store and launch PC games and trainers across Windows 95 through Windows 11." />
+    <meta property="og:image" content="https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg" />
+    <meta property="og:url" content="https://corporate.raggiesoft.com/projects/storetrainer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RaggieSoft Media" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RaggieSoft StoreTrainer | Win32 Retro PC Game &amp; Trainer Mana" />
+    <meta name="twitter:description" content="100% hand-written Visual Basic 6.0 &amp; .NET desktop utility to store and launch PC games and trainers across Windows 95 through Windows 11." />
+    <meta name="twitter:image" content="https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg" />
+    <link rel="icon" type="image/png" href="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://kit.fontawesome.com/ec060982d4.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-grid.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-logo.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/root.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/extras.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/safety-net.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/corporate-aero.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css" />
+  </head>
+  <body>
+    <a href="#content" class="skip-link">Skip to main content</a>
+
+    <nav class="rs-network-bar" aria-label="RaggieSoft Ecosystem Network">
+      <div class="rs-network-bar-inner">
+        <span class="rs-network-label">✦ RaggieSoft Network:</span>
+        <ul class="rs-network-links">
+          <li><a href="https://raggiesoft.com">🌐 Hub</a></li>
+          <li><a href="https://nebulae.raggiesoft.com">🌌 Nebulae</a></li>
+          <li><a href="https://music.raggiesoft.com">🎧 Music</a></li>
+          <li><a href="https://books.raggiesoft.com">📚 Books</a></li>
+          <li><a href="https://stardust.raggiesoft.com">🚀 Stardust</a></li>
+          <li><a href="https://engineroom.raggiesoft.com">⚙️ Engine Room</a></li>
+          <li><a href="https://lore.raggiesoft.com">🏛️ Lore</a></li>
+          <li><a href="https://corporate.raggiesoft.com" aria-current="page" class="is-active">🏢 Corporate</a></li>
+          <li><a href="https://storetrainer.raggiesoft.com">💾 StoreTrainer</a></li>
+          <li><a href="https://michaelpragsdale.com">👔 Michael P. Ragsdale</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="corp-navbar" role="banner">
+      <div class="container corp-header-inner">
+        <a href="/" class="corp-brand-link">
+          <img
+            src="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png"
+            alt="RaggieSoft Media Official Seal"
+            class="corp-brand-logo"
+            width="36"
+            height="36"
+          />
+          <div>
+            <span class="corp-brand-title">RaggieSoft Media</span>
+            <span class="corp-brand-subtitle">IP, Licensing &amp; Open-Source • Norfolk, VA</span>
+          </div>
+        </a>
+
+        <button
+          type="button"
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Toggle navigation menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <nav id="primary-navigation" class="corp-primary-nav" aria-label="Primary Corporate Navigation">
+          <ul class="corp-nav-links">
+            
+        <li>
+          <a href="/" class="corp-nav-link">
+            <i class="fa-solid fa-building-columns" aria-hidden="true"></i> Hub
+          </a>
+        </li>
+        <li>
+          <a href="/licensing" class="corp-nav-link">
+            <i class="fa-solid fa-file-signature" aria-hidden="true"></i> Licensing
+          </a>
+        </li>
+        <li>
+          <a href="/licensing/commercial" class="corp-nav-link">
+            <i class="fa-solid fa-briefcase" aria-hidden="true"></i> Sync Portal
+          </a>
+        </li>
+        <li>
+          <a href="/projects" class="corp-nav-link">
+            <i class="fa-brands fa-osi" aria-hidden="true"></i> Projects
+          </a>
+        </li>
+        <li>
+          <a href="/projects/stardust-engine-cms" class="corp-nav-link">
+            <i class="fa-solid fa-rocket" aria-hidden="true"></i> Stardust CMS
+          </a>
+        </li>
+        <li>
+          <a href="/projects/storetrainer" class="corp-nav-link" aria-current="page">
+            <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> StoreTrainer
+          </a>
+        </li>
+        <li>
+          <a href="/careers" class="corp-nav-link">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Careers Notice
+          </a>
+        </li>
+            <li>
+              <a href="https://michaelpragsdale.com" class="btn btn-sm btn-success rounded-pill px-3 fw-bold text-nowrap" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-user-tie me-1" aria-hidden="true"></i> Portfolio ↗
+              </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                id="theme-toggle"
+                class="btn btn-sm btn-outline-info rounded-pill px-3 fw-bold text-nowrap"
+                aria-label="Toggle between Frutiger Aero Light Mode and Dark Aero Mode"
+              >
+                <span id="theme-toggle-label">◐ Theme</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="flex-grow-1" tabindex="-1">
+      
+<style>
+    /* --- LEGACY HERO SECTION --- */
+    .legacy-hero {
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--raggie-glass-border);
+        box-shadow: 0 8px 32px rgba(255, 179, 0, 0.08);
+        color: var(--bs-body-color);
+        z-index: 1;
+    }
+
+    .legacy-hero::before {
+        content: '';
+        position: absolute;
+        top: -5%; left: -5%; right: -5%; bottom: -5%; 
+        /* Dynamically resolves the CDN path to ensure the background image loads across environments */
+        background-image: url('https://assets.raggiesoft.com/raggiesoft-media/images/hero/dark-aero.jpg'); /* Defaults to dark aero for legacy feel */
+        background-size: cover;
+        background-position: center;
+        z-index: -2;
+        animation: aero-pan 40s linear infinite alternate;
+        filter: sepia(100%) hue-rotate(5deg) saturate(150%) brightness(0.6); /* Amber tinting */
+    }
+
+    .legacy-hero::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(120deg, rgba(7, 11, 20, 0.95) 0%, rgba(255, 179, 0, 0.05) 100%);
+        z-index: -1;
+    }
+
+    /* --- COMPONENT STYLING --- */
+    .legacy-card {
+        background: rgba(255, 179, 0, 0.05);
+        border: 1px solid rgba(255, 179, 0, 0.2);
+        box-shadow: inset 0 0 20px rgba(255, 179, 0, 0.02);
+        border-radius: 12px;
+    }
+    
+    .code-block {
+        background: #0d1117;
+        border: 1px solid #30363d;
+        border-radius: 8px;
+        color: #e6edf3;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.85rem;
+    }
+</style>
+
+
+<div class="legacy-hero py-5 mb-5 text-light">
+    <div class="container py-4">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <span class="badge bg-warning text-dark font-monospace text-uppercase shadow-sm py-2 px-3 text-warning fw-bold mb-3" style="background: rgba(255, 179, 0, 0.1);">
+                    <i class="fa-solid fa-box-archive me-1" aria-hidden="true"></i> Verified Legacy Software
+                </span>
+                <h1 class="display-4 fw-bold text-uppercase mb-2 brand-font" style="text-shadow: 0 0 15px rgba(255,179,0,0.5);">
+                    StoreTrainer
+                </h1>
+                <p class="lead tech-font mb-0" style="max-width: 700px; color: #ced4da;">
+                    A definitive archive of bare-metal Windows API engineering. Designed to store the locations of PC games and trainers in a unified, highly resilient interface.
+                </p>
+            </div>
+            <div class="col-md-4 text-end d-none d-md-block">
+                <i class="fa-duotone fa-floppy-disk fa-6x text-warning opacity-50" aria-hidden="true" style="filter: drop-shadow(0 0 15px rgba(255,179,0,0.5));"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pb-5">
+
+    <div class="row g-5">
+        
+        <div class="col-lg-8">
+            <h2 class="h4 fw-bold text-uppercase text-warning mb-4 border-bottom border-warning pb-2">The Architecture</h2>
+            
+            <p class="mb-4">
+                Maintained natively within a dedicated Windows 2000 Professional SP4 (Update Rollup 1) virtual machine, StoreTrainer is compiled in Visual Basic 6.0 Professional. The project is an exercise in extreme backward and forward compatibility, bridging the gap between the Windows 9x kernel architecture and the modern 64-bit Windows ecosystem.
+            </p>
+
+            <div class="legacy-card p-4 mb-5">
+                <h3 class="h5 fw-bold text-body-emphasis mb-3"><i class="fa-solid fa-microchip text-warning me-2" aria-hidden="true"></i>Bare-Metal Defense</h3>
+                <p class="small text-body-secondary mb-3">
+                    The source code relies heavily on dynamic API loading to prevent fatal crashes on legacy systems. For example, explicitly calling <code>IsWow64Process</code> on a Windows 98 machine would cause an immediate termination. StoreTrainer circumvents this by manually querying memory addresses:
+                </p>
+                <pre class="code-block p-3 overflow-x-auto mb-0"><code>' DetectOSBits.bas - Dynamic WOW64 Verification
+handle = GetProcAddress(GetModuleHandle("kernel32"), "IsWow64Process")
+
+' The function exists, so call it safely
+If handle <> 0 Then
+    IsWow64Process GetCurrentProcess(), is64Bit
+End If</code></pre>
+            </div>
+
+            <h2 class="h4 fw-bold text-uppercase text-warning mb-4 border-bottom border-warning pb-2">Deployment & Preservation</h2>
+            
+            <p class="mb-3">
+                The distribution of StoreTrainer is handled via a highly complex Nullsoft Scriptable Install System (NSIS) package. Because modern operating systems (up to and including Windows 11) incredibly still ship with <code>MSVBVM60.DLL</code>, the software runs natively today. However, the installer assumes absolutely nothing about the host machine.
+            </p>
+            <p class="mb-4">
+                The <code>TSSetup.nsi</code> package serves as a self-contained preservation capsule, dropping the complete source code and necessary Microsoft Redistributables directly onto the target machine.
+            </p>
+
+            <div class="table-responsive mb-5">
+                <table class="table table-hover align-middle border-secondary-subtle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="text-uppercase small">Included Dependency</th>
+                            <th scope="col" class="text-uppercase small">Deployment Target</th>
+                            <th scope="col" class="text-uppercase small">Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold font-monospace small">msvbvm60.dll / oleaut32.dll</td>
+                            <td class="small">Windows 95/98/ME</td>
+                            <td class="small">The 2012 Security Patch versions of the core VB6 runtimes. Installed safely via the <code>InstallLib</code> macro to avoid System File Protection violations.</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold font-monospace small">DCOM98.exe</td>
+                            <td class="small">Windows 9x Only</td>
+                            <td class="small">Installs the Distributed Component Object Model necessary for legacy systems to process advanced object creation.</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold font-monospace small">WScr9x.exe / WScrNT2k.exe</td>
+                            <td class="small">Win 9x & NT 4.0/2000</td>
+                            <td class="small">Installs Windows Script Host 5.6 (satisfying the <code>wshom.ocx</code> dependency) conditionally based on kernel detection.</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold font-monospace small">$INSTDIR\Source</td>
+                            <td class="small">All Systems</td>
+                            <td class="small">Extracts the pristine `.vbp` project file, forms, and modules directly to the user's drive for full educational auditing and recompilation.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+            
+            <div class="card wa-ported-card card bg-body-tertiary border-secondary-subtle shadow-sm mb-4 w-100" style="--body-padding: 0; --header-padding: 0; --wa-panel-bg: transparent;">
+                <div class="card-body p-4">
+                    <h3 class="h6 fw-bold text-uppercase mb-3 text-secondary">Tech Specs</h3>
+                    
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2 d-flex justify-content-between border-bottom border-secondary-subtle pb-2">
+                            <span class="text-body-secondary">Language:</span>
+                            <span class="fw-bold">Visual Basic 6.0</span>
+                        </li>
+                        <li class="mb-2 d-flex justify-content-between border-bottom border-secondary-subtle pb-2">
+                            <span class="text-body-secondary">Installer:</span>
+                            <span class="fw-bold">NSIS (Wizard95 UI)</span>
+                        </li>
+                        <li class="mb-2 d-flex justify-content-between border-bottom border-secondary-subtle pb-2">
+                            <span class="text-body-secondary">UI Engine:</span>
+                            <span class="fw-bold text-end">Comdlg32 / Luna Aero <br><span class="fw-normal opacity-75">(via InitCommonControls)</span></span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span class="text-body-secondary">Compatibility:</span>
+                            <span class="fw-bold text-success">Win95 — Win11</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-grid gap-3">
+                <a href="https://storetrainer.raggiesoft.com/" class="btn btn-warning d-inline-flex align-items-center justify-content-center gap-2 py-3 fw-bold text-uppercase shadow-sm text-dark" target="_blank" rel="noopener noreferrer">
+                    <i slot="start" class="fa-solid fa-download" aria-hidden="true"></i> Download Archive
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+    </main>
+
+    <footer class="corp-footer py-5 mt-5" role="contentinfo">
+      <div class="container">
+        <div class="row gy-4 mb-4">
+          <div class="col-lg-4 col-md-6">
+            <h2 class="h5 text-uppercase fw-bold mb-2">RaggieSoft Media</h2>
+            <p class="small text-body-secondary mb-3">
+              Real-world independent multimedia asset management, open-source software architecture, and master licensing administration operated by <strong>Michael P. Ragsdale</strong>.
+            </p>
+            <p class="small text-body-emphasis mb-0 font-monospace py-1 px-2 d-inline-block rounded border border-secondary-subtle">
+              <i class="fa-solid fa-location-dot me-2 text-primary" aria-hidden="true"></i>HQ: Norfolk, Virginia
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <h2 class="h6 text-uppercase fw-bold border-bottom border-secondary-subtle pb-2 mb-3">Operations &amp; Ecosystem Directory</h2>
+            <ul class="list-unstyled small mb-0 d-grid gap-2">
+              <li><a href="/licensing/commercial" class="text-decoration-none"><i class="fa-solid fa-briefcase fa-fw me-2 text-primary" aria-hidden="true"></i>Commercial Sync Licensing Portal</a></li>
+              <li><a href="/licensing" class="text-decoration-none"><i class="fa-solid fa-scale-balanced fa-fw me-2 text-warning" aria-hidden="true"></i>Master Licensing (MIT &amp; CC BY-SA 4.0)</a></li>
+              <li><a href="https://raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-globe fa-fw me-2 text-info" aria-hidden="true"></i>RaggieSoft Hub (raggiesoft.com)</a></li>
+              <li><a href="https://engineroom.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-compact-disc fa-fw me-2 text-primary" aria-hidden="true"></i>Engine Room Records (engineroom.raggiesoft.com)</a></li>
+              <li><a href="https://stardust.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-shuttle-space fa-fw me-2 text-warning" aria-hidden="true"></i>The Stardust Engine (stardust.raggiesoft.com)</a></li>
+              <li><a href="https://music.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-headphones fa-fw me-2 text-primary" aria-hidden="true"></i>The Listening Room (music.raggiesoft.com)</a></li>
+              <li><a href="https://books.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-book-open fa-fw me-2 text-warning" aria-hidden="true"></i>RaggieSoft Book Reader (books.raggiesoft.com)</a></li>
+              <li><a href="https://lore.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-scroll fa-fw me-2 text-info" aria-hidden="true"></i>Universe Lore Omnibus (lore.raggiesoft.com)</a></li>
+              <li><a href="https://storetrainer.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-floppy-disk fa-fw me-2 text-success" aria-hidden="true"></i>RaggieSoft StoreTrainer (storetrainer.raggiesoft.com)</a></li>
+              <li><a href="https://nebulae.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-compass fa-fw me-2 text-info" aria-hidden="true"></i>The RaggieSoft Nebulae (nebulae.raggiesoft.com)</a></li>
+              <li><a href="https://michaelpragsdale.com" class="text-decoration-none"><i class="fa-solid fa-user-tie fa-fw me-2 text-success" aria-hidden="true"></i>Michael P. Ragsdale (michaelpragsdale.com)</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <h2 class="h6 text-uppercase fw-bold border-bottom border-secondary-subtle pb-2 mb-3">Security &amp; Employment Notice</h2>
+            <div class="aero-footer-alert p-3 small mb-3" role="note">
+              <strong class="d-block mb-1 text-uppercase font-monospace text-body-emphasis">
+                <i class="fa-solid fa-shield-check me-2 text-success" aria-hidden="true"></i>Single-Person Entity Notice
+              </strong>
+              <span class="text-body-secondary">RaggieSoft Media is a single-person entity operated solely by Michael P. Ragsdale and is not hiring.</span>
+              <a href="/careers" class="text-danger fw-bold text-decoration-none d-block mt-2">
+                Read Recruitment Scam Warning <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i>
+              </a>
+            </div>
+            <p class="small text-body-secondary mb-0">
+              <a href="https://raggiesoft.com/about/terms" class="me-3">Terms of Service</a>
+              <a href="https://raggiesoft.com/about/privacy">Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="disclaimer-box mb-3" role="note" aria-label="Fictitious Persons and Entities Disclaimer">
+          <strong>Fictitious Persons, Bands &amp; In-Universe Entities Disclaimer:</strong> While <strong>RaggieSoft Media</strong> and <strong>Engine Room Records</strong> (no &ldquo;LLC&rdquo;) are the real-world creative and technical brands of <strong>Michael P. Ragsdale</strong>, all narrative characters, bands (including The Stardust Engine, Fractured Prisms, Crimson Node, The Paper Wall, and The Arctic Symphony Project), biographies, universities (including Commonwealth Polytechnic Institute / CPI, The Forgers, and The Crucible), corporations (including OmniCorp, Apex Records, Prairie Coachworks, and Sainte-Claire), transit agencies (Blue Ridge Transit), in-universe legal filings, and any entity with <strong>&ldquo;LLC&rdquo;</strong>, <strong>&ldquo;Trust&rdquo;</strong>, or <strong>&ldquo;Holdings&rdquo;</strong> in its name (including <em>Engine Room Records, LLC</em>, <em>The O'Connell Family Revocable Trust</em>, <em>The O'Connell Family, LLC</em>, <em>Artists First Management, LLC</em>, <em>Stardust Properties, LLC</em>, <em>Stardust Blacksburg, LLC</em>, <em>Stardust Strategic Assets, LLC</em>, <em>Pacific Rim Properties, LLC</em>, <em>Jessica Miller Center, LLC</em>, and <em>Aethelgard Holdings, LLC</em>) across the wider RaggieSoft network are works of fiction. Any resemblance to actual persons (living or dead), businesses, institutions, or events is purely coincidental.
+        </div>
+
+        <p class="small text-body-secondary mb-0">
+          &copy; 2026 Michael P. Ragsdale / RaggieSoft Media. Source code licensed under the
+          <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT License</a>.
+          Creative content licensed under
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://assets.raggiesoft.com/raggiesoft-corporate/js/corporate-client.js" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js" defer></script>
+  </body>
+</html>

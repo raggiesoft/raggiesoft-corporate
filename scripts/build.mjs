@@ -370,6 +370,7 @@ function renderCorporateShell(page) {
     </footer>
 
     <script src="https://assets.raggiesoft.com/raggiesoft-corporate/js/corporate-client.js" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js" defer></script>
   </body>
 </html>`;
 }
