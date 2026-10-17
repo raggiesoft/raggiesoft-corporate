@@ -227,9 +227,28 @@ function renderCorporateShell(page) {
     <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/extras.css" />
     <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/safety-net.css" />
     <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/corporate-aero.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css" />
   </head>
   <body>
     <a href="#content" class="skip-link">Skip to main content</a>
+
+    <nav class="rs-network-bar" aria-label="RaggieSoft Ecosystem Network">
+      <div class="rs-network-bar-inner">
+        <span class="rs-network-label">✦ RaggieSoft Network:</span>
+        <ul class="rs-network-links">
+          <li><a href="https://raggiesoft.com">🌐 Hub</a></li>
+          <li><a href="https://nebulae.raggiesoft.com">🌌 Nebulae</a></li>
+          <li><a href="https://music.raggiesoft.com">🎧 Music</a></li>
+          <li><a href="https://books.raggiesoft.com">📚 Books</a></li>
+          <li><a href="https://stardust.raggiesoft.com">🚀 Stardust</a></li>
+          <li><a href="https://engineroom.raggiesoft.com">⚙️ Engine Room</a></li>
+          <li><a href="https://lore.raggiesoft.com">🏛️ Lore</a></li>
+          <li><a href="https://corporate.raggiesoft.com" aria-current="page" class="is-active">🏢 Corporate</a></li>
+          <li><a href="https://storetrainer.raggiesoft.com">💾 StoreTrainer</a></li>
+          <li><a href="https://michaelpragsdale.com">👔 Michael P. Ragsdale</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <header class="corp-navbar" role="banner">
       <div class="container corp-header-inner">
@@ -307,11 +326,15 @@ function renderCorporateShell(page) {
             <ul class="list-unstyled small mb-0 d-grid gap-2">
               <li><a href="/licensing/commercial" class="text-decoration-none"><i class="fa-solid fa-briefcase fa-fw me-2 text-primary" aria-hidden="true"></i>Commercial Sync Licensing Portal</a></li>
               <li><a href="/licensing" class="text-decoration-none"><i class="fa-solid fa-scale-balanced fa-fw me-2 text-warning" aria-hidden="true"></i>Master Licensing (MIT &amp; CC BY-SA 4.0)</a></li>
-              <li><a href="/projects/stardust-engine-cms" class="text-decoration-none"><i class="fa-solid fa-rocket fa-fw me-2 text-info" aria-hidden="true"></i>The Stardust Engine CMS (Elara)</a></li>
-              <li><a href="https://storetrainer.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-floppy-disk fa-fw me-2 text-success" aria-hidden="true"></i>RaggieSoft StoreTrainer Portal (storetrainer.raggiesoft.com)</a></li>
+              <li><a href="https://raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-globe fa-fw me-2 text-info" aria-hidden="true"></i>RaggieSoft Hub (raggiesoft.com)</a></li>
+              <li><a href="https://engineroom.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-compact-disc fa-fw me-2 text-primary" aria-hidden="true"></i>Engine Room Records (engineroom.raggiesoft.com)</a></li>
+              <li><a href="https://stardust.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-shuttle-space fa-fw me-2 text-warning" aria-hidden="true"></i>The Stardust Engine (stardust.raggiesoft.com)</a></li>
               <li><a href="https://music.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-headphones fa-fw me-2 text-primary" aria-hidden="true"></i>The Listening Room (music.raggiesoft.com)</a></li>
               <li><a href="https://books.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-book-open fa-fw me-2 text-warning" aria-hidden="true"></i>RaggieSoft Book Reader (books.raggiesoft.com)</a></li>
-              <li><a href="https://nebulae.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-compass fa-fw me-2 text-info" aria-hidden="true"></i>The RaggieSoft Nebulae (Master Network Sitemap)</a></li>
+              <li><a href="https://lore.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-scroll fa-fw me-2 text-info" aria-hidden="true"></i>Universe Lore Omnibus (lore.raggiesoft.com)</a></li>
+              <li><a href="https://storetrainer.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-floppy-disk fa-fw me-2 text-success" aria-hidden="true"></i>RaggieSoft StoreTrainer (storetrainer.raggiesoft.com)</a></li>
+              <li><a href="https://nebulae.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-compass fa-fw me-2 text-info" aria-hidden="true"></i>The RaggieSoft Nebulae (nebulae.raggiesoft.com)</a></li>
+              <li><a href="https://michaelpragsdale.com" class="text-decoration-none"><i class="fa-solid fa-user-tie fa-fw me-2 text-success" aria-hidden="true"></i>Michael P. Ragsdale (michaelpragsdale.com)</a></li>
             </ul>
           </div>
 
