@@ -1,0 +1,13 @@
+{
+  "name": "raggiesoft-corporate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RaggieSoft Media (corporate.raggiesoft.com) — Real-World B2B IP & Asset Management Hub, Master & Commercial Sync Licensing Portal, and Open Source Projects Hub built with Bootstrap 5.3.8 Static SSG.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --serve",
+    "preview": "node scripts/build.mjs --serve"
+  }
+}
