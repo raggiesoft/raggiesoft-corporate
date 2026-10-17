@@ -139,6 +139,16 @@ function buildCorporateClientJs() {
       }
     });
   }
+
+  /* Mobile Hamburger Menu Toggle (michaelpragsdale.com pattern) */
+  var menuBtn = document.getElementById('mobile-menu-toggle');
+  var primaryNav = document.getElementById('primary-navigation');
+  if (menuBtn && primaryNav) {
+    menuBtn.addEventListener('click', function () {
+      var isOpen = primaryNav.classList.toggle('is-open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
 })();
 `;
 }
@@ -158,11 +168,11 @@ function renderCorporateShell(page) {
     'https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg';
 
   const navItems = [
-    { href: '/', label: 'Corporate Hub', icon: 'fa-solid fa-building-columns' },
-    { href: '/licensing', label: 'Master Licensing', icon: 'fa-solid fa-file-signature' },
-    { href: '/licensing/commercial', label: 'Commercial Sync Portal', icon: 'fa-solid fa-briefcase' },
-    { href: '/projects', label: 'Open Source Projects', icon: 'fa-brands fa-osi' },
-    { href: '/projects/stardust-engine-cms', label: 'Stardust Engine CMS', icon: 'fa-solid fa-rocket' },
+    { href: '/', label: 'Hub', icon: 'fa-solid fa-building-columns' },
+    { href: '/licensing', label: 'Licensing', icon: 'fa-solid fa-file-signature' },
+    { href: '/licensing/commercial', label: 'Sync Portal', icon: 'fa-solid fa-briefcase' },
+    { href: '/projects', label: 'Projects', icon: 'fa-brands fa-osi' },
+    { href: '/projects/stardust-engine-cms', label: 'Stardust CMS', icon: 'fa-solid fa-rocket' },
     { href: '/projects/storetrainer', label: 'StoreTrainer', icon: 'fa-solid fa-floppy-disk' },
     { href: '/careers', label: 'Careers Notice', icon: 'fa-solid fa-shield-halved' }
   ];
@@ -171,9 +181,9 @@ function renderCorporateShell(page) {
     .map((item) => {
       const isActive = item.href === canonicalPath;
       return `
-        <li class="nav-item">
-          <a href="${item.href}" class="btn btn-sm ${isActive ? 'btn-primary fw-bold' : 'btn-outline-secondary'} rounded-pill px-3"${isActive ? ' aria-current="page"' : ''}>
-            <i class="${item.icon} me-1" aria-hidden="true"></i> ${escapeHtml(item.label)}
+        <li>
+          <a href="${item.href}" class="corp-nav-link"${isActive ? ' aria-current="page"' : ''}>
+            <i class="${item.icon}" aria-hidden="true"></i> ${escapeHtml(item.label)}
           </a>
         </li>`;
     })
@@ -212,40 +222,59 @@ function renderCorporateShell(page) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://kit.fontawesome.com/ec060982d4.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-grid.css" />
-    <link rel="stylesheet" href="/assets/corporate-aero.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-logo.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/root.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/extras.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/webawesome/safety-net.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/raggiesoft-corporate/css/corporate-aero.css" />
   </head>
   <body>
     <a href="#content" class="skip-link">Skip to main content</a>
 
-    <header class="corp-navbar py-3" role="banner">
-      <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
-        <a href="/" class="d-inline-flex align-items-center gap-2 text-decoration-none text-body-emphasis">
+    <header class="corp-navbar" role="banner">
+      <div class="container corp-header-inner">
+        <a href="/" class="corp-brand-link">
           <img
             src="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png"
             alt="RaggieSoft Media Official Seal"
             class="corp-brand-logo"
-            width="40"
-            height="40"
+            width="36"
+            height="36"
           />
           <div>
-            <span class="d-block fw-bold text-uppercase" style="letter-spacing: 0.05em;">RaggieSoft Media</span>
-            <span class="d-block small text-body-secondary font-monospace" style="font-size: 0.72rem;">IP, Licensing &amp; Open-Source Architecture • Norfolk, VA</span>
+            <span class="corp-brand-title">RaggieSoft Media</span>
+            <span class="corp-brand-subtitle">IP, Licensing &amp; Open-Source • Norfolk, VA</span>
           </div>
         </a>
 
-        <nav aria-label="Primary Corporate Navigation">
-          <ul class="nav d-flex flex-wrap align-items-center gap-2 mb-0">
+        <button
+          type="button"
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Toggle navigation menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <nav id="primary-navigation" class="corp-primary-nav" aria-label="Primary Corporate Navigation">
+          <ul class="corp-nav-links">
             ${navHtml}
-            <li class="nav-item">
-              <a href="https://michaelpragsdale.com" class="btn btn-sm btn-success rounded-pill px-3 fw-bold" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-user-tie me-1" aria-hidden="true"></i> Architect Portfolio ↗
+            <li>
+              <a href="https://michaelpragsdale.com" class="btn btn-sm btn-success rounded-pill px-3 fw-bold text-nowrap" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-user-tie me-1" aria-hidden="true"></i> Portfolio ↗
               </a>
             </li>
-            <li class="nav-item">
+            <li>
               <button
                 type="button"
                 id="theme-toggle"
-                class="btn btn-sm btn-outline-info rounded-pill px-3 fw-bold"
+                class="btn btn-sm btn-outline-info rounded-pill px-3 fw-bold text-nowrap"
                 aria-label="Toggle between Frutiger Aero Light Mode and Dark Aero Mode"
               >
                 <span id="theme-toggle-label">◐ Theme</span>
@@ -317,7 +346,7 @@ function renderCorporateShell(page) {
       </div>
     </footer>
 
-    <script src="/assets/corporate-client.js" defer></script>
+    <script src="https://assets.raggiesoft.com/raggiesoft-corporate/js/corporate-client.js" defer></script>
   </body>
 </html>`;
 }
@@ -335,8 +364,17 @@ function buildCorporateSite() {
     path.join(projectRoot, 'src', 'styles', 'corporate-aero.css'),
     'utf-8'
   );
+  const clientJsContent = buildCorporateClientJs();
   writeDistFile('assets/corporate-aero.css', cssContent);
-  writeDistFile('assets/corporate-client.js', buildCorporateClientJs());
+  writeDistFile('assets/corporate-client.js', clientJsContent);
+
+  const workspaceRoot = path.resolve(projectRoot, '..', '..', '..');
+  const sharedCdnCssDir = path.join(workspaceRoot, 'raggiesoft-assets', 'raggiesoft-corporate', 'css');
+  const sharedCdnJsDir = path.join(workspaceRoot, 'raggiesoft-assets', 'raggiesoft-corporate', 'js');
+  fs.mkdirSync(sharedCdnCssDir, { recursive: true });
+  fs.mkdirSync(sharedCdnJsDir, { recursive: true });
+  fs.writeFileSync(path.join(sharedCdnCssDir, 'corporate-aero.css'), cssContent, 'utf-8');
+  fs.writeFileSync(path.join(sharedCdnJsDir, 'corporate-client.js'), clientJsContent, 'utf-8');
 
   for (const page of portedPages) {
     const relPath = page.route === '/' ? 'index.html' : `${page.route.slice(1)}/index.html`;

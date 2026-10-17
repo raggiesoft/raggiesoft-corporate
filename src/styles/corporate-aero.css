@@ -12,13 +12,16 @@
  *   body text, >= 3.0:1 for large headings and interactive borders) across both
  *   `@media (prefers-color-scheme: light)` and `@media (prefers-color-scheme: dark)`
  *   as well as `[data-bs-theme="light"]` and `[data-bs-theme="dark"]`.
+ * - Compact single-row executive header modeled after `michaelpragsdale.com`
+ *   with a 44x44px accessible mobile hamburger toggle.
+ * - Strict card & badge overflow containment (`min-width: 0; max-width: 100%; overflow: hidden;`).
  * ============================================================================
  */
 
 :root,
 [data-bs-theme="light"] {
   --corp-bg-canvas: #f0f6fc;
-  --corp-bg-surface: rgba(255, 255, 255, 0.92);
+  --corp-bg-surface: rgba(255, 255, 255, 0.94);
   --corp-bg-elevated: #e2eef9;
   --corp-text-primary: #0a192f;
   --corp-text-secondary: #2c4263;
@@ -31,7 +34,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-bs-theme="light"]) {
     --corp-bg-canvas: #070d19;
-    --corp-bg-surface: rgba(15, 23, 42, 0.92);
+    --corp-bg-surface: rgba(15, 23, 42, 0.94);
     --corp-bg-elevated: #111c33;
     --corp-text-primary: #f8fafc;
     --corp-text-secondary: #cbd5e1;
@@ -44,7 +47,7 @@
 
 [data-bs-theme="dark"] {
   --corp-bg-canvas: #070d19;
-  --corp-bg-surface: rgba(15, 23, 42, 0.92);
+  --corp-bg-surface: rgba(15, 23, 42, 0.94);
   --corp-bg-elevated: #111c33;
   --corp-text-primary: #f8fafc;
   --corp-text-secondary: #cbd5e1;
@@ -52,6 +55,12 @@
   --corp-accent-cyan: #38bdf8;
   --corp-accent-emerald: #34d399;
   --raggie-glass-border: rgba(56, 189, 248, 0.28);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -62,6 +71,7 @@ body {
   color: var(--corp-text-primary);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 /* Skip Link for Keyboard Accessibility (WCAG 2.4.1) */
@@ -87,26 +97,147 @@ body {
   outline-offset: 2px !important;
 }
 
-/* Sticky Corporate Aero Header */
+/* Compact Sticky Corporate Aero Header (Modeled after michaelpragsdale.com) */
 .corp-navbar {
   position: sticky;
   top: 0;
   z-index: 1030;
   background-color: var(--corp-bg-surface);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--corp-border-glass);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
-.corp-brand-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  border: 1px solid var(--corp-border-glass);
+.corp-header-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
 }
 
-/* Ported Web Awesome Card Normalization */
+.corp-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--corp-text-primary);
+  flex-shrink: 0;
+}
+
+.corp-brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 0.45rem;
+  object-fit: cover;
+  border: 1px solid var(--corp-border-glass);
+  flex-shrink: 0;
+}
+
+.corp-brand-title {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.corp-brand-subtitle {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--corp-text-secondary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--corp-border-glass);
+  background-color: var(--corp-bg-elevated);
+  color: var(--corp-text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.corp-primary-nav {
+  display: flex;
+  align-items: center;
+}
+
+.corp-nav-links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.corp-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--corp-text-secondary);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.corp-nav-link:hover,
+.corp-nav-link[aria-current="page"] {
+  background-color: var(--corp-bg-elevated);
+  color: var(--corp-text-primary);
+  border-color: var(--corp-border-glass);
+}
+
+@media (max-width: 1120px) {
+  .corp-header-inner {
+    flex-wrap: wrap;
+  }
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+  .corp-primary-nav {
+    display: none;
+    width: 100%;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--corp-border-glass);
+  }
+  .corp-primary-nav.is-open {
+    display: block;
+  }
+  .corp-nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+  .corp-nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.55rem 0.75rem;
+  }
+}
+
+/* Card & Badge Overflow Containment */
+.row > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.card,
 .wa-ported-card {
   background-color: var(--corp-bg-surface);
   color: var(--corp-text-primary);
@@ -114,6 +245,26 @@ body {
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.card > *,
+.wa-ported-card > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.badge {
+  white-space: normal !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: left;
+  line-height: 1.35;
 }
 
 .wa-ported-card > [slot="header"] {
@@ -130,6 +281,41 @@ body {
 
 .wa-ported-details > summary {
   cursor: pointer;
+}
+
+/* Light Mode Contrast Normalization for Ported Pages */
+html[data-bs-theme="light"] .text-white,
+html[data-bs-theme="light"] .text-light {
+  color: var(--corp-text-primary) !important;
+}
+
+html[data-bs-theme="light"] .text-white-75 {
+  color: var(--corp-text-secondary) !important;
+}
+
+html[data-bs-theme="light"] .text-white-50 {
+  color: #475569 !important;
+}
+
+html[data-bs-theme="light"] .bg-dark,
+html[data-bs-theme="light"] .bg-black {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+html[data-bs-theme="light"] .bg-dark .text-white,
+html[data-bs-theme="light"] .bg-dark .text-light,
+html[data-bs-theme="light"] .bg-black .text-white,
+html[data-bs-theme="light"] .bg-black .text-light,
+html[data-bs-theme="light"] .badge.bg-primary,
+html[data-bs-theme="light"] .badge.bg-danger,
+html[data-bs-theme="light"] .badge.bg-success,
+html[data-bs-theme="light"] .badge.bg-dark,
+html[data-bs-theme="light"] .btn-primary,
+html[data-bs-theme="light"] .btn-danger,
+html[data-bs-theme="light"] .btn-success,
+html[data-bs-theme="light"] .btn-dark {
+  color: #ffffff !important;
 }
 
 /* Corporate Footer & Disclaimer */
@@ -153,4 +339,3 @@ body {
   font-size: 0.82rem;
   color: var(--corp-text-secondary);
 }
-
