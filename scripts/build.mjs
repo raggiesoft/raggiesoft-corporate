@@ -182,13 +182,13 @@ function renderCorporateShell(page) {
     'https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg';
 
   const navItems = [
-    { href: '/', label: 'Hub', icon: 'fa-solid fa-building-columns' },
-    { href: '/licensing', label: 'Licensing', icon: 'fa-solid fa-file-signature' },
-    { href: '/licensing/commercial', label: 'Sync Portal', icon: 'fa-solid fa-briefcase' },
-    { href: '/projects', label: 'Projects', icon: 'fa-brands fa-osi' },
-    { href: '/projects/stardust-engine-cms', label: 'Stardust CMS', icon: 'fa-solid fa-rocket' },
-    { href: '/projects/storetrainer', label: 'StoreTrainer', icon: 'fa-solid fa-floppy-disk' },
-    { href: '/careers', label: 'Careers Notice', icon: 'fa-solid fa-shield-halved' }
+    { href: '/', label: 'Hub', icon: 'ph-duotone ph-bank' },
+    { href: '/licensing', label: 'Licensing', icon: 'ph-duotone ph-signature' },
+    { href: '/licensing/commercial', label: 'Sync Portal', icon: 'ph-duotone ph-briefcase' },
+    { href: '/projects', label: 'Projects', icon: 'ph-duotone ph-globe' },
+    { href: '/projects/stardust-engine-cms', label: 'Stardust CMS', icon: 'ph-duotone ph-rocket' },
+    { href: '/projects/storetrainer', label: 'StoreTrainer', icon: 'ph-duotone ph-floppy-disk' },
+    { href: '/careers', label: 'Careers Notice', icon: 'ph-duotone ph-shield-chevron' }
   ];
 
   const navHtml = navItems
@@ -233,8 +233,8 @@ function renderCorporateShell(page) {
     <meta name="twitter:description" content="${safeDesc}" />
     <meta name="twitter:image" content="${escapeHtml(ogImage)}" />
     <link rel="icon" type="image/png" href="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://kit.fontawesome.com/ec060982d4.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/fonts/phosphor/phosphor.min.css" />
     <link rel="stylesheet" href="/assets/corporate-aero.css?v=20261017k" />
     <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261017m" />
   </head>
@@ -294,7 +294,7 @@ function renderCorporateShell(page) {
             ${navHtml}
             <li>
               <a href="https://michaelpragsdale.com" class="btn btn-sm btn-success rounded-pill px-3 fw-bold text-nowrap" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-user-tie me-1" aria-hidden="true"></i> Portfolio ↗
+                <i class="ph-duotone ph-user-check me-1" aria-hidden="true"></i> Portfolio ↗
               </a>
             </li>
             <li>
@@ -325,23 +325,23 @@ function renderCorporateShell(page) {
               Real-world independent multimedia asset management, open-source software architecture, and master licensing administration operated by <strong>Michael P. Ragsdale</strong>.
             </p>
             <p class="small text-body-emphasis mb-0 font-monospace py-1 px-2 d-inline-block rounded border border-secondary-subtle">
-              <i class="fa-solid fa-location-dot me-2 text-primary" aria-hidden="true"></i>HQ: Norfolk, Virginia
+              <i class="ph-duotone ph-map-pin me-2 text-primary" aria-hidden="true"></i>HQ: Norfolk, Virginia
             </p>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <h2 class="h6 text-uppercase fw-bold border-bottom border-secondary-subtle pb-2 mb-3">Operations &amp; Ecosystem Directory</h2>
             <ul class="list-unstyled small mb-0 d-grid gap-2">
-              <li><a href="/licensing/commercial" class="text-decoration-none"><i class="fa-solid fa-briefcase fa-fw me-2 text-primary" aria-hidden="true"></i>Commercial Sync Licensing Portal</a></li>
-              <li><a href="/licensing" class="text-decoration-none"><i class="fa-solid fa-scale-balanced fa-fw me-2 text-warning" aria-hidden="true"></i>Master Licensing (MIT &amp; CC BY-SA 4.0)</a></li>
-              <li><a href="https://raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-globe fa-fw me-2 text-info" aria-hidden="true"></i>RaggieSoft Hub (raggiesoft.com)</a></li>
-              <li><a href="https://engineroom.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-compact-disc fa-fw me-2 text-primary" aria-hidden="true"></i>Engine Room Records (engineroom.raggiesoft.com)</a></li>
-              <li><a href="https://stardust.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-shuttle-space fa-fw me-2 text-warning" aria-hidden="true"></i>The Stardust Engine (stardust.raggiesoft.com)</a></li>
-              <li><a href="https://music.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-headphones fa-fw me-2 text-primary" aria-hidden="true"></i>The Listening Room (music.raggiesoft.com)</a></li>
-              <li><a href="https://books.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-book-open fa-fw me-2 text-warning" aria-hidden="true"></i>RaggieSoft Book Reader (books.raggiesoft.com)</a></li>
-              <li><a href="https://storetrainer.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-floppy-disk fa-fw me-2 text-success" aria-hidden="true"></i>RaggieSoft StoreTrainer (storetrainer.raggiesoft.com)</a></li>
-              <li><a href="https://nebulae.raggiesoft.com" class="text-decoration-none"><i class="fa-solid fa-compass fa-fw me-2 text-info" aria-hidden="true"></i>The RaggieSoft Nebulae (nebulae.raggiesoft.com)</a></li>
-              <li><a href="https://michaelpragsdale.com" class="text-decoration-none"><i class="fa-solid fa-user-tie fa-fw me-2 text-success" aria-hidden="true"></i>Michael P. Ragsdale (michaelpragsdale.com)</a></li>
+              <li><a href="/licensing/commercial" class="text-decoration-none"><i class="ph-duotone ph-briefcase ph-fw me-2 text-primary" aria-hidden="true"></i>Commercial Sync Licensing Portal</a></li>
+              <li><a href="/licensing" class="text-decoration-none"><i class="ph-duotone ph-scales ph-fw me-2 text-warning" aria-hidden="true"></i>Master Licensing (MIT &amp; CC BY-SA 4.0)</a></li>
+              <li><a href="https://raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-globe ph-fw me-2 text-info" aria-hidden="true"></i>RaggieSoft Hub (raggiesoft.com)</a></li>
+              <li><a href="https://engineroom.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-disc ph-fw me-2 text-primary" aria-hidden="true"></i>Engine Room Records (engineroom.raggiesoft.com)</a></li>
+              <li><a href="https://stardust.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-rocket-launch ph-fw me-2 text-warning" aria-hidden="true"></i>The Stardust Engine (stardust.raggiesoft.com)</a></li>
+              <li><a href="https://music.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-headphones ph-fw me-2 text-primary" aria-hidden="true"></i>The Listening Room (music.raggiesoft.com)</a></li>
+              <li><a href="https://books.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-book-open ph-fw me-2 text-warning" aria-hidden="true"></i>RaggieSoft Book Reader (books.raggiesoft.com)</a></li>
+              <li><a href="https://storetrainer.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-floppy-disk ph-fw me-2 text-success" aria-hidden="true"></i>RaggieSoft StoreTrainer (storetrainer.raggiesoft.com)</a></li>
+              <li><a href="https://nebulae.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-compass ph-fw me-2 text-info" aria-hidden="true"></i>The RaggieSoft Nebulae (nebulae.raggiesoft.com)</a></li>
+              <li><a href="https://michaelpragsdale.com" class="text-decoration-none"><i class="ph-duotone ph-user-check ph-fw me-2 text-success" aria-hidden="true"></i>Michael P. Ragsdale (michaelpragsdale.com)</a></li>
             </ul>
           </div>
 
@@ -349,11 +349,11 @@ function renderCorporateShell(page) {
             <h2 class="h6 text-uppercase fw-bold border-bottom border-secondary-subtle pb-2 mb-3">Security &amp; Employment Notice</h2>
             <div class="aero-footer-alert p-3 small mb-3" role="note">
               <strong class="d-block mb-1 text-uppercase font-monospace text-body-emphasis">
-                <i class="fa-solid fa-shield-check me-2 text-success" aria-hidden="true"></i>Single-Person Entity Notice
+                <i class="ph-duotone ph-shield-check me-2 text-success" aria-hidden="true"></i>Single-Person Entity Notice
               </strong>
               <span class="text-body-secondary">RaggieSoft Media is a single-person entity operated solely by Michael P. Ragsdale and is not hiring.</span>
               <a href="/careers" class="text-danger fw-bold text-decoration-none d-block mt-2">
-                Read Recruitment Scam Warning <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i>
+                Read Recruitment Scam Warning <i class="ph-duotone ph-arrow-right ms-1" aria-hidden="true"></i>
               </a>
             </div>
             <p class="small text-body-secondary mb-0">
