@@ -237,6 +237,14 @@ function renderCorporateShell(page) {
     <link rel="stylesheet" href="https://assets.raggiesoft.com/fonts/phosphor/phosphor.min.css" />
     <link rel="stylesheet" href="/assets/corporate-aero.css?v=20261017k" />
     <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261017m" />
+    <!-- Google Analytics 4 (GA4) Telemetry Integration (G-P9RG9JVYB6) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9RG9JVYB6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P9RG9JVYB6');
+    </script>
   </head>
   <body>
     <a href="#content" class="skip-link">Skip to main content</a>
