@@ -232,6 +232,51 @@ function renderCorporateShell(page) {
     <meta name="twitter:title" content="${safeTitle}" />
     <meta name="twitter:description" content="${safeDesc}" />
     <meta name="twitter:image" content="${escapeHtml(ogImage)}" />
+    <script type="application/ld+json">${JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': 'https://corporate.raggiesoft.com/#organization',
+          name: 'RaggieSoft Media',
+          url: 'https://corporate.raggiesoft.com',
+          logo: 'https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png',
+          description: 'B2B intellectual property, commercial sync licensing, and open-source software governance division of RaggieSoft.',
+          founder: {
+            '@type': 'Person',
+            '@id': 'https://michaelpragsdale.com/#michael-ragsdale',
+            name: 'Michael P. Ragsdale',
+            url: 'https://michaelpragsdale.com'
+          },
+          parentOrganization: {
+            '@type': 'Organization',
+            '@id': 'https://raggiesoft.com/#organization',
+            name: 'RaggieSoft',
+            url: 'https://raggiesoft.com'
+          }
+        },
+        {
+          '@type': 'WebSite',
+          '@id': 'https://corporate.raggiesoft.com/#website',
+          url: 'https://corporate.raggiesoft.com',
+          name: 'RaggieSoft Media — Corporate & Licensing Portal',
+          publisher: { '@id': 'https://corporate.raggiesoft.com/#organization' }
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${canonicalUrl}#webpage`,
+          url: canonicalUrl,
+          name: page.title,
+          description: page.description,
+          isPartOf: { '@id': 'https://corporate.raggiesoft.com/#website' },
+          primaryImageOfPage: {
+            '@type': 'ImageObject',
+            url: ogImage
+          },
+          license: 'https://opensource.org/licenses/MIT'
+        }
+      ]
+    })}</script>
     <link rel="icon" type="image/png" href="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png" />
     <link rel="stylesheet" href="https://assets.raggiesoft.com/common/vendor/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="https://assets.raggiesoft.com/fonts/phosphor/phosphor.min.css" />
