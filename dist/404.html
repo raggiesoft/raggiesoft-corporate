@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        var storedScheme = localStorage.getItem('color-scheme');
+        document.querySelector('meta[name="color-scheme"]').content = storedScheme ?? 'light dark';
+        var resolvedBsTheme = (storedScheme === 'light' || storedScheme === 'dark')
+          ? storedScheme
+          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-bs-theme', resolvedBsTheme);
+      } catch (e) {}
+    </script>
+    <title>Page Not Found | RaggieSoft Media</title>
+    <meta name="description" content="The requested licensing or project page could not be found on RaggieSoft Media." />
+    <meta name="robots" content="noindex, follow" />
+    <meta property="og:title" content="Page Not Found | RaggieSoft Media" />
+    <meta property="og:description" content="The requested licensing or project page could not be found on RaggieSoft Media." />
+    <meta property="og:image" content="https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg" />
+    <meta property="og:url" content="https://corporate.raggiesoft.com/404" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RaggieSoft Media" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Page Not Found | RaggieSoft Media" />
+    <meta name="twitter:description" content="The requested licensing or project page could not be found on RaggieSoft Media." />
+    <meta name="twitter:image" content="https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://corporate.raggiesoft.com/#organization","name":"RaggieSoft Media","url":"https://corporate.raggiesoft.com","logo":"https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png","description":"B2B intellectual property, commercial sync licensing, and open-source software governance division of RaggieSoft.","founder":{"@type":"Person","@id":"https://michaelpragsdale.com/#michael-ragsdale","name":"Michael P. Ragsdale","url":"https://michaelpragsdale.com"},"parentOrganization":{"@type":"Organization","@id":"https://raggiesoft.com/#organization","name":"RaggieSoft","url":"https://raggiesoft.com"}},{"@type":"WebSite","@id":"https://corporate.raggiesoft.com/#website","url":"https://corporate.raggiesoft.com","name":"RaggieSoft Media — Corporate & Licensing Portal","publisher":{"@id":"https://corporate.raggiesoft.com/#organization"}},{"@type":"WebPage","@id":"https://corporate.raggiesoft.com/404#webpage","url":"https://corporate.raggiesoft.com/404","name":"Page Not Found | RaggieSoft Media","description":"The requested licensing or project page could not be found on RaggieSoft Media.","isPartOf":{"@id":"https://corporate.raggiesoft.com/#website"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg"},"license":"https://opensource.org/licenses/MIT"}]}</script>
+    <link rel="icon" type="image/png" href="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/fonts/phosphor/phosphor.min.css" />
+    <link rel="stylesheet" href="/assets/corporate-aero.css?v=20261017k" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261029f" />
+    <!-- Google Analytics 4 (GA4) Telemetry Integration (G-P9RG9JVYB6) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9RG9JVYB6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P9RG9JVYB6');
+    </script>
+  </head>
+  <body>
+    <a href="#content" class="skip-link">Skip to main content</a>
+
+    <nav class="rs-network-bar" aria-label="RaggieSoft Ecosystem Network">
+      <div class="rs-network-bar-inner">
+        <span class="rs-network-label">✦ RaggieSoft Network:</span>
+        <ul class="rs-network-links">
+          <li><a href="https://raggiesoft.com">🌐 Hub</a></li>
+          <li><a href="https://nebulae.raggiesoft.com">🌌 Nebulae</a></li>
+          <li><a href="https://music.raggiesoft.com">🎧 Music</a></li>
+          <li><a href="https://books.raggiesoft.com">📚 Books</a></li>
+          <li><a href="https://stardust.raggiesoft.com">🚀 Stardust</a></li>
+          <li><a href="https://engineroom.raggiesoft.com">⚙️ Engine Room</a></li>
+          <li><a href="https://corporate.raggiesoft.com" aria-current="page" class="is-active">🏢 Corporate</a></li>
+          <li><a href="https://storetrainer.raggiesoft.com">💾 StoreTrainer</a></li>
+          <li><a href="https://michaelpragsdale.com">👔 Michael P. Ragsdale</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="corp-navbar" role="banner">
+      <div class="corp-header-inner">
+        <a href="/" class="corp-brand-link">
+          <img
+            src="https://assets.raggiesoft.com/raggiesoft-corporate/images/logos/raggiesoft-logo.png"
+            alt="RaggieSoft Media Official Seal"
+            class="corp-brand-logo"
+            width="36"
+            height="36"
+          />
+          <div>
+            <span class="corp-brand-title">RaggieSoft Media</span>
+            <span class="corp-brand-subtitle">IP, Licensing &amp; Open-Source • Norfolk, VA</span>
+          </div>
+        </a>
+
+        <button
+          type="button"
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Toggle navigation menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <nav id="primary-navigation" class="corp-primary-nav" aria-label="Primary Corporate Navigation">
+          <ul class="corp-nav-links">
+            
+        <li>
+          <a href="/" class="corp-nav-link">
+            <i class="ph-duotone ph-bank" aria-hidden="true"></i> Hub
+          </a>
+        </li>
+        <li>
+          <a href="/licensing" class="corp-nav-link">
+            <i class="ph-duotone ph-signature" aria-hidden="true"></i> Licensing
+          </a>
+        </li>
+        <li>
+          <a href="/licensing/commercial" class="corp-nav-link">
+            <i class="ph-duotone ph-briefcase" aria-hidden="true"></i> Sync Portal
+          </a>
+        </li>
+        <li>
+          <a href="/projects" class="corp-nav-link">
+            <i class="ph-duotone ph-globe" aria-hidden="true"></i> Projects
+          </a>
+        </li>
+        <li>
+          <a href="/projects/stardust-engine-cms" class="corp-nav-link">
+            <i class="ph-duotone ph-rocket" aria-hidden="true"></i> Stardust CMS
+          </a>
+        </li>
+        <li>
+          <a href="/projects/storetrainer" class="corp-nav-link">
+            <i class="ph-duotone ph-floppy-disk" aria-hidden="true"></i> StoreTrainer
+          </a>
+        </li>
+        <li>
+          <a href="/careers" class="corp-nav-link">
+            <i class="ph-duotone ph-shield-chevron" aria-hidden="true"></i> Careers Notice
+          </a>
+        </li>
+            <li>
+              <a href="https://michaelpragsdale.com" class="btn btn-sm btn-success rounded-pill px-3 fw-bold text-nowrap" target="_blank" rel="noopener noreferrer">
+                <i class="ph-duotone ph-user-check me-1" aria-hidden="true"></i> Portfolio ↗
+              </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                id="theme-toggle"
+                class="btn btn-sm btn-outline-info rounded-pill px-3 fw-bold text-nowrap"
+                aria-label="Toggle between Frutiger Aero Light Mode and Dark Aero Mode"
+              >
+                <span id="theme-toggle-label">◐ Theme</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="flex-grow-1" tabindex="-1">
+      
+        <section class="container py-5">
+          <div class="p-4 p-md-5 rounded-4 border border-secondary-subtle">
+            <span class="badge bg-info text-dark mb-2">RaggieSoft Media • Page Not Found</span>
+            <h1 class="h2 fw-bold mb-3">We Could Not Find That Page</h1>
+            <p class="lead mb-4">
+              The licensing portal, open-source project overview, or corporate notice you requested may have moved.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="/" class="btn btn-primary">🏢 RaggieSoft Media Hub</a>
+              <a href="/licensing" class="btn btn-outline-info">⚖️ Master Licensing</a>
+              <a href="/licensing/commercial" class="btn btn-outline-warning">🎬 Commercial Sync Portal</a>
+              <a href="https://raggiesoft.com" class="btn btn-outline-secondary">🌐 RaggieSoft Network Hub</a>
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <footer class="corp-footer py-5 mt-5" role="contentinfo">
+      <div class="container">
+        <div class="row gy-4 mb-4">
+          <div class="col-lg-4 col-md-6">
+            <h2 class="h5 text-uppercase fw-bold mb-2">RaggieSoft Media</h2>
+            <p class="small text-body-secondary mb-3">
+              Real-world independent multimedia asset management, open-source software architecture, and master licensing administration operated by <strong>Michael P. Ragsdale</strong>.
+            </p>
+            <p class="small text-body-emphasis mb-0 font-monospace py-1 px-2 d-inline-block rounded border border-secondary-subtle">
+              <i class="ph-duotone ph-map-pin me-2 text-primary" aria-hidden="true"></i>HQ: Norfolk, Virginia
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <h2 class="h6 text-uppercase fw-bold border-bottom border-secondary-subtle pb-2 mb-3">Operations &amp; Ecosystem Directory</h2>
+            <ul class="list-unstyled small mb-0 d-grid gap-2">
+              <li><a href="/licensing/commercial" class="text-decoration-none"><i class="ph-duotone ph-briefcase ph-fw me-2 text-primary" aria-hidden="true"></i>Commercial Sync Licensing Portal</a></li>
+              <li><a href="/licensing" class="text-decoration-none"><i class="ph-duotone ph-scales ph-fw me-2 text-warning" aria-hidden="true"></i>Master Licensing (MIT &amp; CC BY-SA 4.0)</a></li>
+              <li><a href="https://raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-globe ph-fw me-2 text-info" aria-hidden="true"></i>RaggieSoft Hub (raggiesoft.com)</a></li>
+              <li><a href="https://engineroom.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-disc ph-fw me-2 text-primary" aria-hidden="true"></i>Engine Room Records (engineroom.raggiesoft.com)</a></li>
+              <li><a href="https://stardust.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-rocket-launch ph-fw me-2 text-warning" aria-hidden="true"></i>The Stardust Engine (stardust.raggiesoft.com)</a></li>
+              <li><a href="https://music.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-headphones ph-fw me-2 text-primary" aria-hidden="true"></i>The Listening Room (music.raggiesoft.com)</a></li>
+              <li><a href="https://books.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-book-open ph-fw me-2 text-warning" aria-hidden="true"></i>RaggieSoft Book Reader (books.raggiesoft.com)</a></li>
+              <li><a href="https://storetrainer.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-floppy-disk ph-fw me-2 text-success" aria-hidden="true"></i>RaggieSoft StoreTrainer (storetrainer.raggiesoft.com)</a></li>
+              <li><a href="https://nebulae.raggiesoft.com" class="text-decoration-none"><i class="ph-duotone ph-compass ph-fw me-2 text-info" aria-hidden="true"></i>The RaggieSoft Nebulae (nebulae.raggiesoft.com)</a></li>
+              <li><a href="https://michaelpragsdale.com" class="text-decoration-none"><i class="ph-duotone ph-user-check ph-fw me-2 text-success" aria-hidden="true"></i>Michael P. Ragsdale (michaelpragsdale.com)</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <h2 class="h6 text-uppercase fw-bold border-bottom border-secondary-subtle pb-2 mb-3">Security &amp; Employment Notice</h2>
+            <div class="aero-footer-alert p-3 small mb-3" role="note">
+              <strong class="d-block mb-1 text-uppercase font-monospace text-body-emphasis">
+                <i class="ph-duotone ph-shield-check me-2 text-success" aria-hidden="true"></i>Single-Person Entity Notice
+              </strong>
+              <span class="text-body-secondary">RaggieSoft Media is a single-person entity operated solely by Michael P. Ragsdale and is not hiring.</span>
+              <a href="/careers" class="text-danger fw-bold text-decoration-none d-block mt-2">
+                Read Recruitment Scam Warning <i class="ph-duotone ph-arrow-right ms-1" aria-hidden="true"></i>
+              </a>
+            </div>
+            <p class="small text-body-secondary mb-0">
+              <a href="https://raggiesoft.com/about/terms" class="me-3">Terms of Service</a>
+              <a href="https://raggiesoft.com/about/privacy">Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="disclaimer-box mb-3" role="note" aria-label="Fictitious Persons and Entities Disclaimer">
+          <strong>Fictitious Persons, Bands &amp; In-Universe Entities Disclaimer:</strong> While <strong>RaggieSoft Media</strong> and <strong>Engine Room Records</strong> (no &ldquo;LLC&rdquo;) are the real-world creative and technical brands of <strong>Michael P. Ragsdale</strong>, all narrative characters, bands (including The Stardust Engine, Fractured Prisms, Crimson Node, The Paper Wall, and The Arctic Symphony Project), biographies, universities (including Commonwealth Polytechnic Institute / CPI, The Forgers, and The Crucible), corporations (including OmniCorp, Apex Records, Prairie Coachworks, and Sainte-Claire), transit agencies (Blue Ridge Transit), in-universe legal filings, and any entity with <strong>&ldquo;LLC&rdquo;</strong>, <strong>&ldquo;Trust&rdquo;</strong>, or <strong>&ldquo;Holdings&rdquo;</strong> in its name (including <em>Engine Room Records, LLC</em>, <em>The O'Connell Family Revocable Trust</em>, <em>The O'Connell Family, LLC</em>, <em>Artists First Management, LLC</em>, <em>Stardust Properties, LLC</em>, <em>Stardust Blacksburg, LLC</em>, <em>Stardust Strategic Assets, LLC</em>, <em>Pacific Rim Properties, LLC</em>, <em>Jessica Miller Center, LLC</em>, and <em>Aethelgard Holdings, LLC</em>) across the wider RaggieSoft network are works of fiction. Any resemblance to actual persons (living or dead), businesses, institutions, or events is purely coincidental.
+        </div>
+
+        <p class="small text-body-secondary mb-0">
+          &copy; 2026 Michael P. Ragsdale / RaggieSoft Media. Source code licensed under the
+          <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT License</a>.
+          Creative content licensed under
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/assets/corporate-client.js?v=20261017k" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261029f" defer></script>
+  </body>
+</html>

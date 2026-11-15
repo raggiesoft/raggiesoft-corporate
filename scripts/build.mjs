@@ -176,7 +176,14 @@ function renderCorporateShell(page) {
   const safeTitle = escapeHtml(page.title.slice(0, 60));
   const safeDesc = escapeHtml(page.description.slice(0, 155));
   const canonicalPath = page.route || '/';
+  const isErrorPage = canonicalPath === '/404';
   const canonicalUrl = `https://corporate.raggiesoft.com${canonicalPath === '/' ? '' : canonicalPath}`;
+  const robotsMetaHtml = page.noindex
+    ? '\n    <meta name="robots" content="noindex, follow" />'
+    : '';
+  const canonicalLinkHtml = isErrorPage
+    ? ''
+    : `\n    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />`;
   const ogImage =
     page.ogImage ||
     'https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg';
@@ -220,8 +227,7 @@ function renderCorporateShell(page) {
       } catch (e) {}
     </script>
     <title>${safeTitle}</title>
-    <meta name="description" content="${safeDesc}" />
-    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+    <meta name="description" content="${safeDesc}" />${robotsMetaHtml}${canonicalLinkHtml}
     <meta property="og:title" content="${safeTitle}" />
     <meta property="og:description" content="${safeDesc}" />
     <meta property="og:image" content="${escapeHtml(ogImage)}" />
@@ -460,13 +466,60 @@ function buildCorporateSite() {
   fs.writeFileSync(path.join(sharedCdnCssDir, 'corporate-aero.css'), cssContent, 'utf-8');
   fs.writeFileSync(path.join(sharedCdnJsDir, 'corporate-client.js'), clientJsContent, 'utf-8');
 
+  const canonicalRoutes = [];
   for (const page of portedPages) {
+    canonicalRoutes.push(page.route || '/');
     const relPath = page.route === '/' ? 'index.html' : `${page.route.slice(1)}/index.html`;
     writeDistFile(relPath, renderCorporateShell(page));
   }
 
+  writeDistFile(
+    '404.html',
+    renderCorporateShell({
+      route: '/404',
+      noindex: true,
+      title: 'Page Not Found | RaggieSoft Media',
+      description: 'The requested licensing or project page could not be found on RaggieSoft Media.',
+      html: `
+        <section class="container py-5">
+          <div class="p-4 p-md-5 rounded-4 border border-secondary-subtle">
+            <span class="badge bg-info text-dark mb-2">RaggieSoft Media • Page Not Found</span>
+            <h1 class="h2 fw-bold mb-3">We Could Not Find That Page</h1>
+            <p class="lead mb-4">
+              The licensing portal, open-source project overview, or corporate notice you requested may have moved.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="/" class="btn btn-primary">🏢 RaggieSoft Media Hub</a>
+              <a href="/licensing" class="btn btn-outline-info">⚖️ Master Licensing</a>
+              <a href="/licensing/commercial" class="btn btn-outline-warning">🎬 Commercial Sync Portal</a>
+              <a href="https://raggiesoft.com" class="btn btn-outline-secondary">🌐 RaggieSoft Network Hub</a>
+            </div>
+          </div>
+        </section>`
+    })
+  );
+
+  const todayIso = new Date().toISOString().split('T')[0];
+  const sortedRoutes = Array.from(new Set(canonicalRoutes)).sort((a, b) => {
+    if (a === '/') return -1;
+    if (b === '/') return 1;
+    return a.localeCompare(b);
+  });
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sortedRoutes
+    .map((route) => {
+      const loc = `https://corporate.raggiesoft.com${route === '/' ? '/' : route}`;
+      return `  <url>\n    <loc>${escapeHtml(loc)}</loc>\n    <lastmod>${todayIso}</lastmod>\n  </url>`;
+    })
+    .join('\n')}\n</urlset>\n`;
+  writeDistFile('sitemap.xml', sitemapXml);
+  writeDistFile(
+    'robots.txt',
+    `User-agent: *\nAllow: /\n\nSitemap: https://corporate.raggiesoft.com/sitemap.xml\n`
+  );
+  writeDistFile('726167676965736f6674696e6465786e.txt', '726167676965736f6674696e6465786e\n');
+
   console.log(
-    `✅ Built corporate.raggiesoft.com static bundle in ${distDir} (${portedPages.length} B2B routes compiled).`
+    `✅ Built corporate.raggiesoft.com static bundle in ${distDir} (${portedPages.length} B2B routes + sitemap & 404 compiled).`
   );
 }
 
