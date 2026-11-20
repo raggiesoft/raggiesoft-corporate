@@ -3,42 +3,46 @@
  * ============================================================================
  * scripts/build.mjs — RaggieSoft Media (corporate.raggiesoft.com)
  * ============================================================================
- * Architectural Overview:
- * Static Site Generation (SSG) compiler for `corporate.raggiesoft.com` (the
- * real-world B2B corporate hub of Michael P. Ragsdale, spun off from
- * `/raggiesoft.com/www/pages/raggiesoft-media/`).
+ * PLAIN-ENGLISH OVERVIEW (100-LEVEL JAVASCRIPT & NODE.JS SSG GUIDE):
+ * What is this file?
+ *   This self-contained Node.js ES Module is the entire Static Site Generator
+ *   (SSG) for `corporate.raggiesoft.com`—the real-world B2B intellectual property,
+ *   master licensing (MIT & CC BY-SA 4.0), commercial synchronization, open-source
+ *   projects, and recruitment-scam-notice portal operated by Michael P. Ragsdale.
  *
- * Tech Stack:
- * - Bootstrap 5.3.8 Static SSG + Frutiger Aero / Dark Aero adaptive glass UI
- * - Modern Web Guidance `dark-mode-toggle` (`<meta name="color-scheme">` +
- *   `data-bs-theme` synchronization)
- * - WCAG 2.1 AA / Section 508 compliant landmarks, skip links, focus rings,
- *   and OpenGraph (`og:*`) + Twitter Card social metadata (`title <= 60` chars,
- *   `description <= 155` chars).
- *
- * Routes Emitted to `./dist`:
- * - `/index.html` (RaggieSoft Media Hub)
- * - `/licensing/index.html` (Master Licensing Portal — MIT & CC BY-SA 4.0)
- * - `/licensing/commercial/index.html` (Commercial Synchronization Portal)
- * - `/projects/index.html` (Open-Source & Legacy Projects Hub)
- * - `/projects/stardust-engine-cms/index.html` (The Stardust Engine CMS / Elara)
- * - `/projects/storetrainer/index.html` (RaggieSoft StoreTrainer Overview & Gateway to storetrainer.raggiesoft.com)
- * - `/careers/index.html` (Careers & Employment Scam Warning Notice)
+ * How does this 2-file architecture work?
+ *   Unlike heavier frameworks, `corporate.raggiesoft.com` needs only TWO source
+ *   code files (`scripts/build.mjs` + `src/styles/corporate-aero.css`) plus one
+ *   flat JSON content manifest (`src/data/ported-pages.json`):
+ *   1. `buildCorporateSite()` reads the 7 page records from `src/data/ported-pages.json`
+ *      (`/`, `/licensing`, `/licensing/commercial`, `/projects`,
+ *      `/projects/stardust-engine-cms`, `/projects/storetrainer`, and `/careers`).
+ *   2. Wraps each route's Bootstrap 5.3.8 inner HTML inside `renderCorporateShell(page)`
+ *      (injecting flash-free Frutiger Aero / Dark Aero theme initialization,
+ *      OpenGraph/Twitter tags, Schema.org JSON-LD, sticky header, and legal footer).
+ *   3. Emits `/assets/corporate-aero.css` and `/assets/corporate-client.js` to
+ *      `./dist/assets/` AND mirrors both files 1:1 into
+ *      `raggiesoft-assets/raggiesoft-corporate/{css,js}/` so the shared CDN stays synced!
+ *   4. Generates `/404.html`, `/sitemap.xml`, `/robots.txt`, and IndexNow key.
  * ============================================================================
  */
 
+// Import Node.js standard library modules (`fs`, `path`, `http`, `fileURLToPath`).
 import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
 import { fileURLToPath } from 'node:url';
 
+// Resolve `projectRoot` (`.../subdomains/corporate`) and output folder `distDir` (`./dist`).
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const distDir = path.join(projectRoot, 'dist');
 
 /**
- * Escapes HTML special characters for safe interpolation.
+ * Escapes `&`, `<`, `>`, `"`, and `'` into safe HTML entities to prevent broken
+ * HTML attributes or Cross-Site Scripting (XSS) when interpolating page metadata.
+ *
  * @param {string} str
  * @returns {string}
  */
@@ -52,9 +56,10 @@ function escapeHtml(str) {
 }
 
 /**
- * Writes a static file to `./dist`, creating parent directories automatically.
- * @param {string} relPath
- * @param {string} content
+ * Writes a UTF-8 file inside `./dist`, creating parent folders recursively if needed.
+ *
+ * @param {string} relPath - Path relative to `./dist` (e.g., `'licensing/index.html'`).
+ * @param {string} content - UTF-8 string contents.
  */
 function writeDistFile(relPath, content) {
   const fullPath = path.join(distDir, relPath);
@@ -63,29 +68,59 @@ function writeDistFile(relPath, content) {
 }
 
 /**
- * Builds `/assets/corporate-client.js` implementing the Modern Web Guidance
- * two-state color-scheme toggle (reverting to system default when matching OS)
- * and synchronizing Bootstrap 5.3.8's `data-bs-theme` attribute.
- * @returns {string}
+ * Generates `/assets/corporate-client.js` (and mirrors it 1:1 to
+ * `raggiesoft-assets/raggiesoft-corporate/js/corporate-client.js`).
+ *
+ * Three Progressive-Enhancement Features in This Client Script:
+ *   1. Frutiger Aero (Light) / Dark Aero (Dark) Toggle: Synchronizes `<meta name="color-scheme">`
+ *      and Bootstrap 5.3.8's `data-bs-theme` attribute, displaying `(Auto)` when following OS settings.
+ *   2. Mobile Hamburger Menu Toggle (`#mobile-menu-toggle` -> `#primary-navigation.is-open`).
+ *   3. Anti-Scraper B2B Email Hydration (`.elara-secure-mail`): Assembles `mailto:` addresses
+ *      in memory from split `data-u`, `data-d`, and `data-t` attributes so automated spam
+ *      harvesters scanning raw static HTML never find plain-text email addresses!
+ *
+ * @returns {string} Browser-ready JavaScript source code.
  */
 function buildCorporateClientJs() {
   return `/**
  * @license MIT
- * corporate-client.js — Progressive Enhancement for corporate.raggiesoft.com
- * Implements Modern Web Guidance dark-mode-toggle (Frutiger Aero Light vs. Dark Aero)
- * and synchronizes Bootstrap 5.3.8 data-bs-theme.
+ * ============================================================================
+ * corporate-client.js — Client Progressive Enhancement (corporate.raggiesoft.com)
+ * ============================================================================
+ * PLAIN-ENGLISH OVERVIEW (100-LEVEL JAVASCRIPT GUIDE):
+ * What is this file?
+ *   Browser-side progressive enhancement script loaded with defer on every page
+ *   of corporate.raggiesoft.com. Generated by buildCorporateClientJs() inside
+ *   scripts/build.mjs and mirrored 1:1 to both /assets/corporate-client.js and
+ *   raggiesoft-assets/raggiesoft-corporate/js/corporate-client.js.
+ *
+ * What three interactive jobs does it perform?
+ *   1. Adaptive Aero Theme Switcher (#theme-toggle): Toggles between Frutiger Aero
+ *      (Light Mode) and Dark Aero (Dark Mode), keeping Bootstrap 5.3.8's
+ *      html[data-bs-theme] attribute and meta[name="color-scheme"] synchronized,
+ *      and showing '(Auto)' whenever the theme follows OS prefers-color-scheme.
+ *   2. Mobile Navigation Drawer (#mobile-menu-toggle): Toggles .is-open and
+ *      aria-expanded on narrow screens (<= 1120px).
+ *   3. Scraper-Protected Email Link Hydration (.elara-secure-mail): Joins split
+ *      HTML data attributes (data-u + '@' + data-d + '.' + data-t) into live
+ *      mailto: links only inside real browsers so spam bots cannot harvest emails.
+ * ============================================================================
  */
+// IIFE wrapper keeps helper variables private out of the global window scope.
 (function () {
+  // --- 1. FRUTIGER AERO (LIGHT) / DARK AERO THEME SWITCHER ---
   var meta = document.querySelector('meta[name="color-scheme"]');
   var toggleBtn = document.getElementById('theme-toggle');
   var toggleLabel = document.getElementById('theme-toggle-label');
 
+  // Detects whether the operating system currently requests Dark Mode.
   function getSystemScheme() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark'
       : 'light';
   }
 
+  // Checks localStorage for an explicit user choice; otherwise uses OS preference.
   function getRenderedScheme() {
     var stored = null;
     try {
@@ -97,6 +132,8 @@ function buildCorporateClientJs() {
     return getSystemScheme();
   }
 
+  // Updates Bootstrap 5.3.8's data-bs-theme attribute on the root html element and labels the button
+  // ('☀️ Light (Auto)' / '🌙 Dark (Auto)' when following OS, or without '(Auto)' when pinned).
   function updateThemeState() {
     var current = getRenderedScheme();
     document.documentElement.setAttribute('data-bs-theme', current);
@@ -119,6 +156,7 @@ function buildCorporateClientJs() {
       var target = current === 'dark' ? 'light' : 'dark';
       var sys = getSystemScheme();
       try {
+        // Revert to automatic OS tracking whenever the user toggles back to their OS default.
         if (target === sys) {
           localStorage.removeItem('color-scheme');
           meta.content = 'light dark';
@@ -132,6 +170,7 @@ function buildCorporateClientJs() {
       updateThemeState();
     });
 
+    // Keep multiple open tabs of corporate.raggiesoft.com synchronized.
     window.addEventListener('storage', function (e) {
       if (e.key === 'color-scheme') {
         meta.content = e.newValue || 'light dark';
@@ -140,17 +179,20 @@ function buildCorporateClientJs() {
     });
   }
 
-  /* Mobile Hamburger Menu Toggle (michaelpragsdale.com pattern) */
+  // --- 2. MOBILE HAMBURGER MENU TOGGLE ---
   var menuBtn = document.getElementById('mobile-menu-toggle');
   var primaryNav = document.getElementById('primary-navigation');
   if (menuBtn && primaryNav) {
     menuBtn.addEventListener('click', function () {
+      // classList.toggle('is-open') returns true when added and false when removed.
       var isOpen = primaryNav.classList.toggle('is-open');
       menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   }
 
-  /* Hydrate scraper-protected B2B email links (.elara-secure-mail) */
+  // --- 3. ANTI-SCRAPER B2B EMAIL LINK HYDRATION (.elara-secure-mail) ---
+  // Static HTML stores user ('data-u'), domain ('data-d'), and TLD ('data-t') separately
+  // so regex email harvesters see no '@' address in raw HTML; real browsers assemble mailto: here.
   var mailLinks = document.querySelectorAll('.elara-secure-mail');
   for (var i = 0; i < mailLinks.length; i++) {
     var link = mailLinks[i];
@@ -168,11 +210,14 @@ function buildCorporateClientJs() {
 }
 
 /**
- * Wraps route body HTML inside the Bootstrap 5.3.8 Corporate Aero document shell.
+ * Wraps a single route record (`{ route, title, description, ogImage, noindex, html }`)
+ * from `src/data/ported-pages.json` inside the Bootstrap 5.3.8 Corporate Aero HTML5 shell.
+ *
  * @param {Object} page
- * @returns {string}
+ * @returns {string} Complete HTML5 document string.
  */
 function renderCorporateShell(page) {
+  // Clamp SEO metadata lengths (`title <= 60`, `description <= 155`) and escape HTML entities.
   const safeTitle = escapeHtml(page.title.slice(0, 60));
   const safeDesc = escapeHtml(page.description.slice(0, 155));
   const canonicalPath = page.route || '/';
@@ -188,6 +233,7 @@ function renderCorporateShell(page) {
     page.ogImage ||
     'https://assets.raggiesoft.com/raggiesoft-corporate/images/og/raggiesoft-corporate-og.jpg';
 
+  // Primary navigation items paired with Phosphor Duotone icon classes (`ph-duotone ph-*`).
   const navItems = [
     { href: '/', label: 'Hub', icon: 'ph-duotone ph-bank' },
     { href: '/licensing', label: 'Licensing', icon: 'ph-duotone ph-signature' },
@@ -441,15 +487,26 @@ function renderCorporateShell(page) {
 </html>`;
 }
 
+/**
+ * Compiles the entire `corporate.raggiesoft.com` static bundle:
+ *   1. Loads all 7 B2B route definitions from `src/data/ported-pages.json`.
+ *   2. Wipes `./dist`, writes `corporate-aero.css` and `corporate-client.js` to
+ *      `./dist/assets/`, and mirrors both files 1:1 into `raggiesoft-assets/raggiesoft-corporate/`.
+ *   3. Renders every page into `./dist/<route>/index.html` (or `./dist/index.html` for `'/'`).
+ *   4. Emits `/404.html`, `/sitemap.xml`, `/robots.txt`, and IndexNow verification key.
+ */
 function buildCorporateSite() {
+  // Read the flat JSON array of corporate routes (`{ route, title, description, html }`).
   const portedPagesPath = path.join(projectRoot, 'src', 'data', 'ported-pages.json');
   const portedPages = fs.existsSync(portedPagesPath)
     ? JSON.parse(fs.readFileSync(portedPagesPath, 'utf-8'))
     : [];
 
+  // Clean and recreate `./dist` so every build starts fresh.
   fs.rmSync(distDir, { recursive: true, force: true });
   fs.mkdirSync(distDir, { recursive: true });
 
+  // Emit `corporate-aero.css` and `corporate-client.js` into `./dist/assets/`.
   const cssContent = fs.readFileSync(
     path.join(projectRoot, 'src', 'styles', 'corporate-aero.css'),
     'utf-8'
@@ -458,6 +515,8 @@ function buildCorporateSite() {
   writeDistFile('assets/corporate-aero.css', cssContent);
   writeDistFile('assets/corporate-client.js', clientJsContent);
 
+  // Mirror `corporate-aero.css` and `corporate-client.js` 1:1 into `raggiesoft-assets/raggiesoft-corporate/`
+  // so CDN assets on `https://assets.raggiesoft.com/raggiesoft-corporate/` never drift out of sync!
   const workspaceRoot = path.resolve(projectRoot, '..', '..', '..');
   const sharedCdnCssDir = path.join(workspaceRoot, 'raggiesoft-assets', 'raggiesoft-corporate', 'css');
   const sharedCdnJsDir = path.join(workspaceRoot, 'raggiesoft-assets', 'raggiesoft-corporate', 'js');
@@ -466,6 +525,7 @@ function buildCorporateSite() {
   fs.writeFileSync(path.join(sharedCdnCssDir, 'corporate-aero.css'), cssContent, 'utf-8');
   fs.writeFileSync(path.join(sharedCdnJsDir, 'corporate-client.js'), clientJsContent, 'utf-8');
 
+  // Render every route in `ported-pages.json` using directory-index clean URLs.
   const canonicalRoutes = [];
   for (const page of portedPages) {
     canonicalRoutes.push(page.route || '/');
@@ -473,6 +533,7 @@ function buildCorporateSite() {
     writeDistFile(relPath, renderCorporateShell(page));
   }
 
+  // Emit an accessible, consumer-friendly `/404.html` error page (`noindex: true`).
   writeDistFile(
     '404.html',
     renderCorporateShell({
@@ -523,8 +584,10 @@ function buildCorporateSite() {
   );
 }
 
+// Run the build immediately when invoked (`npm run build` -> `node scripts/build.mjs`).
 buildCorporateSite();
 
+// Optional local HTTP preview server (`npm run dev` / `npm run preview` -> `node scripts/build.mjs --serve`).
 if (process.argv.includes('--serve')) {
   const port = Number(process.env.PORT || 4322);
   const server = http.createServer((req, res) => {

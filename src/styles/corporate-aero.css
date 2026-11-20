@@ -3,32 +3,39 @@
  * ============================================================================
  * src/styles/corporate-aero.css — RaggieSoft Media (corporate.raggiesoft.com)
  * ============================================================================
- * Architectural Overview:
- * Complete, self-contained "Frutiger Aero (Light Mode) / Dark Aero (Dark Mode)
- * Master Glass" design system built directly on top of Bootstrap 5.3.8 for
- * `corporate.raggiesoft.com`.
+ * PLAIN-ENGLISH OVERVIEW (100-LEVEL CSS & BOOTSTRAP 5.3.8 THEMING GUIDE):
+ * What is this file?
+ *   This stylesheet layers our custom **Frutiger Aero (Light Mode)** and
+ *   **Dark Aero (Dark Mode)** translucent glass design system on top of
+ *   Bootstrap 5.3.8 (`bootstrap.min.css`). At build time, `scripts/build.mjs`
+ *   copies this file to BOTH `./dist/assets/corporate-aero.css` and
+ *   `raggiesoft-assets/raggiesoft-corporate/css/corporate-aero.css`.
  *
- * Why Self-Contained (No `raggiesoft-grid.css` Dependency):
- * - `corporate.raggiesoft.com` loads genuine Bootstrap 5.3.8 (`bootstrap.min.css`).
- * - Previously loading `raggiesoft-grid.css` (a Web Awesome polyfill) after
- *   Bootstrap overrode `.flex-md-row`, `.btn-primary`, and `.bg-primary`.
- * - Consolidating all Frutiger Aero and Dark Aero tokens, HUD glass panels,
- *   button gel gradients, card image containers, and WCAG 2.1 AA contrast
- *   guarantees into this single stylesheet ensures zero framework collisions.
+ * How does Bootstrap 5.3.8 Color-Mode Theming (`data-bs-theme`) Work?
+ *   Bootstrap 5.3+ reads an HTML attribute on the root `<html>` tag—either
+ *   `<html data-bs-theme="light">` or `<html data-bs-theme="dark">`—and styles
+ *   every grid, card, badge, and utility class using CSS Custom Properties
+ *   prefixed with `--bs-*` (such as `--bs-body-bg`, `--bs-body-color`, and
+ *   `--bs-primary`). By overriding those `--bs-*` variables alongside our own
+ *   `--corp-*` glass tokens in three blocks:
+ *   1. `:root, [data-bs-theme="light"]` — Frutiger Aero sunlit sky-glass palette.
+ *   2. `@media (prefers-color-scheme: dark)` (`:root:not([data-bs-theme="light"])`) —
+ *      No-JS OS Dark Mode fallback if JavaScript is disabled.
+ *   3. `[data-bs-theme="dark"]` — Dark Aero obsidian-cyan HUD glass palette.
+ *   every Bootstrap component and custom Aero panel switches themes seamlessly!
  *
- * Accessibility & Color Contrast Guarantees (WCAG 2.1 AA / Section 508):
- * - Enforces >= 4.5:1 contrast ratio for all body text, badges, and buttons,
- *   and >= 3.0:1 for large headings and UI component borders across both
- *   `@media (prefers-color-scheme: light)` / `[data-bs-theme="light"]` and
- *   `@media (prefers-color-scheme: dark)` / `[data-bs-theme="dark"]`.
- * - Honors `@media (prefers-reduced-motion: reduce)` by disabling background
- *   panning and hover transforms when reduced motion is requested.
+ * Why Self-Contained (Zero `raggiesoft-grid.css` Polyfill Needed):
+ *   Because `corporate.raggiesoft.com` loads genuine Bootstrap 5.3.8, keeping
+ *   all Aero glass rules, glossy gel buttons, 210px card image locks, and
+ *   WCAG 2.1 AA contrast overrides (>= 4.5:1 text) in this single stylesheet
+ *   prevents CSS specificity collisions.
  * ============================================================================
  */
 
 /* ==========================================================================
    1. DESIGN TOKENS — FRUTIGER AERO (LIGHT) & DARK AERO (DARK)
    ========================================================================== */
+/* Shared core brand swatch constants */
 :root {
   --mpr-blue-500: #0066cc;
   --mpr-blue-600: #004c99;
@@ -531,6 +538,12 @@ html[data-bs-theme="light"] .rs-network-bar {
 /* ==========================================================================
    5. AERO HERO & LEGACY HERO BANNERS
    ========================================================================== */
+/* Layered Hero Architecture:
+ * - `.aero-hero::before` (`z-index: -2`) renders an oversized `200% x 200%` Frutiger/Dark Aero
+ *   wallpaper slowly panning over 45 seconds via `@keyframes aero-pan`.
+ * - `.aero-hero::after` (`z-index: -1`) overlays a frosted `backdrop-filter: blur(6px)` glass
+ *   veil guaranteeing crisp >= 4.5:1 text legibility over the moving artwork.
+ * - `.aero-content` (`z-index: 1`) places foreground headings and buttons safely on top. */
 .aero-hero {
   position: relative;
   overflow: hidden;
@@ -541,6 +554,7 @@ html[data-bs-theme="light"] .rs-network-bar {
   z-index: 1;
 }
 
+/* Dark Aero surface tint and subtle cyan glow for `.aero-hero` when Dark Mode is active */
 [data-bs-theme="dark"] .aero-hero {
   background: linear-gradient(135deg, rgba(56, 189, 248, 0.06) 0%, rgba(56, 189, 248, 0.01) 100%);
   box-shadow: 0 8px 32px rgba(0, 229, 255, 0.05);
@@ -664,7 +678,10 @@ html[data-bs-theme="light"] .rs-network-bar {
   word-wrap: break-word;
 }
 
-/* Prevent double padding when a card uses .card-body, .aero-card-img-container, or [slot="header"] */
+/* Modern CSS `:has()` Parent Selector:
+ * Automatically removes outer `.card` padding when the card already contains an inner
+ * `.card-body`, `.aero-card-img-container` edge-to-edge banner, or `[slot="header"]`—
+ * preventing awkward double-padding without needing extra utility classes! */
 .card:has(> .card-body),
 .wa-ported-card:has(> .card-body),
 .card:has(> .aero-card-img-container),
