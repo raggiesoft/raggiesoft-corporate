@@ -2,4 +2,5 @@
 # .gitattributes — raggiesoft-corporate (corporate.raggiesoft.com)
 # ============================================================================
 dist/** linguist-generated=true
+src/data/** linguist-generated=true
 package-lock.json linguist-generated=true
