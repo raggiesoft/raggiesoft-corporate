@@ -245,9 +245,11 @@ html[data-bs-theme="light"] .rs-network-bar {
 }
 
 .rs-network-bar-inner {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0.35rem 1rem;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.35rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
