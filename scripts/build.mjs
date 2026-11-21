@@ -333,7 +333,7 @@ function renderCorporateShell(page) {
     <link rel="stylesheet" href="https://assets.raggiesoft.com/common/vendor/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="https://assets.raggiesoft.com/fonts/phosphor/phosphor.min.css" />
     <link rel="stylesheet" href="/assets/corporate-aero.css?v=20261017k" />
-    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261118a" />
+    <link rel="stylesheet" href="https://assets.raggiesoft.com/common/css/raggiesoft-network.css?v=20261120b" />
     <!-- Google Analytics 4 (GA4) Telemetry Integration (G-P9RG9JVYB6) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9RG9JVYB6"></script>
     <script>
@@ -482,7 +482,7 @@ function renderCorporateShell(page) {
     </footer>
 
     <script src="/assets/corporate-client.js?v=20261017k" defer></script>
-    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261118a" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261120b" defer></script>
   </body>
 </html>`;
 }
