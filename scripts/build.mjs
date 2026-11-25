@@ -463,7 +463,8 @@ function renderCorporateShell(page) {
             </div>
             <p class="small text-body-secondary mb-0">
               <a href="https://raggiesoft.com/about/terms" class="me-3">Terms of Service</a>
-              <a href="https://raggiesoft.com/about/privacy">Privacy Policy</a>
+              <a href="https://raggiesoft.com/about/privacy" class="me-3">Privacy Policy</a>
+              <a href="https://raggiesoft.com/about/ai-disclaimer">AI &amp; Creative Process | RaggieSoft Governance</a>
             </p>
           </div>
         </div>
@@ -482,7 +483,7 @@ function renderCorporateShell(page) {
     </footer>
 
     <script src="/assets/corporate-client.js?v=20261017k" defer></script>
-    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261121e" defer></script>
+    <script src="https://assets.raggiesoft.com/common/js/raggiesoft-network.js?v=20261125g" defer></script>
   </body>
 </html>`;
 }
